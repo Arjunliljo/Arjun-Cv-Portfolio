@@ -1,11 +1,8 @@
 import { render } from "preact";
-import Root from "./root.jsx";
 import * as React from "react";
 import {
   createBrowserRouter,
   RouterProvider,
-  Route,
-  Link,
 } from "react-router-dom";
 import App from "./App.jsx";
 

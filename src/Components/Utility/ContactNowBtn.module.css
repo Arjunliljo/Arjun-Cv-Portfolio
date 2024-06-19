@@ -1,0 +1,36 @@
+.btn {
+  position: absolute;
+  right: -10rem;
+  top: -3rem;
+  padding: 1rem 10rem;
+  z-index: 1000;
+  transition: transform 0.5s, background-color 0.2s;
+  background-color: #322486;
+  transform-origin: left;
+  opacity: 0;
+  animation: contact-anim 0.3s linear forwards;
+  animation-delay: 3s;
+  cursor: pointer;
+  text-transform: uppercase;
+  color: #fbfcc5;
+  letter-spacing: 0.5rem;
+  font-size: 1.5rem;
+  font-weight: 700;
+  border: none;
+}
+
+@keyframes contact-anim {
+  from {
+    transform: rotate(0deg);
+  }
+  50% {
+    opacity: 1;
+  }
+  to {
+    transform: rotate(40deg);
+    opacity: 1;
+  }
+}
+.btn:hover {
+  background-color: rgba(50, 36, 134, 0.8);
+}
