@@ -1,10 +1,15 @@
+import { useState } from "preact/hooks";
 import { NavLink } from "react-router-dom";
 
 function Navigation() {
+  const [checked, setIsChecked] = useState(false);
+
   return (
     <div className="navigation">
       {/* Navigation toggle checkbox */}
       <input
+        checked={checked}
+        onClick={() => setIsChecked((checked) => !checked)}
         type="checkbox"
         className="navigation__checkbox"
         id="navi__toggle"

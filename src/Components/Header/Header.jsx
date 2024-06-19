@@ -10,12 +10,12 @@ function Header({ children }) {
       {children}
 
       <div className="header">
-        <GitHubSvg />
-        <LinkedInSvg />
-        <InstaSvg />
-
+        <div className="header__social">
+          <GitHubSvg />
+          <LinkedInSvg />
+          <InstaSvg />
+        </div>
         <TextBox />
-
         <img
           src="./img/Arjun-Cv-main.png"
           className="main-img"

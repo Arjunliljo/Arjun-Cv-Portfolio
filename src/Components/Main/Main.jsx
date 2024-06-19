@@ -1,5 +1,11 @@
+import SectionAbout from "./SectionAbout/SectionAbout";
+
 function Main() {
-  return <div></div>;
+  return (
+    <main>
+      <SectionAbout></SectionAbout>
+    </main>
+  );
 }
 
 export default Main;

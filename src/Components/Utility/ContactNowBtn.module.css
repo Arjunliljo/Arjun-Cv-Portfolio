@@ -34,3 +34,16 @@
 .btn:hover {
   background-color: rgba(50, 36, 134, 0.8);
 }
+
+@media (max-width: 600px) {
+  .btn {
+    transform: rotate(0);
+    right: 0;
+    animation: none;
+    top: 85vh;
+    font-size: 5rem;
+    bottom: 0rem;
+    left: 0;
+    opacity: 1;
+  }
+}
