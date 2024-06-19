@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import styles from "./TextBox.module.css";
 import { useRef } from "preact/hooks";
 
 const webDevAnim = {
@@ -59,7 +58,7 @@ function TextBox() {
   }, [elementWidth]);
 
   return (
-    <section className="text-box">
+    <div className="text-box">
       <h1 className="primery-title">
         <span className="primery-title--main">Arjun Cv</span>
         <span className="primery-title--sub">
@@ -84,7 +83,7 @@ function TextBox() {
       >
         Download Resume
       </a>
-    </section>
+    </div>
   );
 }
 

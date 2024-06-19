@@ -35,7 +35,7 @@
   background-color: rgba(50, 36, 134, 0.8);
 }
 
-@media (max-width: 600px) {
+@media (max-width: 900px) {
   .btn {
     transform: rotate(0);
     right: 0;

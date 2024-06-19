@@ -1,4 +1,4 @@
-import ContactNowBtn from "../Utility/ContactNowBtn";
+import ContactNowBtn from "../Utility/Buttons/ContactNowBtn";
 import GitHubSvg from "../Utility/SmallUtilities/GitHubSvg";
 import InstaSvg from "../Utility/SmallUtilities/InstaSvg";
 import LinkedInSvg from "../Utility/SmallUtilities/LinkedInSvg";
