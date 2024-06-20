@@ -1,3 +1,5 @@
+import { useSection } from "../../../Context/SectionContext";
+
 function Composition() {
   return (
     <div className="composition">

@@ -9,7 +9,10 @@ function Header({ children }) {
     <header>
       {children}
 
-      <div className="header">
+      <div
+        className="header"
+        style={{ backgroundImage: "linear-gradient(red, yellow)" }}
+      >
         <div className="header__social">
           <GitHubSvg />
           <LinkedInSvg />

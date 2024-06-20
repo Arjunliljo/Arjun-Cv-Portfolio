@@ -776,6 +776,8 @@ body {
 
 .section-about {
   background-color: #141530;
+  transform: translateY(10rem);
+  opacity: 0;
   transition: 1s all;
 }
 .section-about__grid {

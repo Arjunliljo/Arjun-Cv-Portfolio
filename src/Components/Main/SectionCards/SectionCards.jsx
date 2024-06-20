@@ -1,44 +1,21 @@
-import { useRef, useEffect, useMemo } from "preact/hooks";
+import { useRef, useEffect } from "preact/hooks";
 import { useSection } from "../../../Context/SectionContext";
 import SecondaryBtn from "../../Utility/Buttons/SecondaryBtn";
 import Headings from "../../Utility/Headings";
 import HeadingsThertiary from "../../Utility/HeadingsThertiary";
 import Composition from "./Composition";
-import { useObserver } from "../../../Hooks/useObeserver";
-import { setIsAbout } from "../../../App/features/eventSlice";
-import { useSelector } from "react-redux";
 
 function SectionAbout() {
-  const isAbout = useSelector((state) => state.event.isAbout);
+  //   const { sectionObserver } = useSection();
 
-  const [callBack] = useObserver(setIsAbout, true, false);
+  const cardSection = useRef("");
 
-  const aboutObserver = useMemo(() => {
-    return new IntersectionObserver(callBack, {
-      root: null,
-      threshold: 0.3,
-    });
-  }, [callBack]);
+  //   useEffect(() => {
+  //     sectionObserver.observe(cardSection.current);
+  //   }, []);
 
-  const aboutSection = useRef("");
-
-  useEffect(() => {
-    if (aboutSection.current) {
-      aboutObserver.observe(aboutSection.current);
-    }
-    return () => {
-      if (aboutSection.current) {
-        aboutObserver.unobserve(aboutSection.current);
-      }
-    };
-  }, [aboutObserver]);
   return (
-    <section
-      ref={aboutSection}
-      className="section-about"
-      id="sectionAbout"
-      style={isAbout ? { transform: "translate(0rem)", opacity: 1 } : ""}
-    >
+    <section ref={cardSection} className="section-about" id="sectionCards">
       <Headings>About</Headings>
 
       <div className="section-about__grid">

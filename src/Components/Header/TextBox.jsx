@@ -53,7 +53,6 @@ function TextBox() {
   useEffect(() => {
     if (elementWidth === 0) {
       isSwitch = !isSwitch;
-      console.log(isSwitch);
     }
   }, [elementWidth]);
 
