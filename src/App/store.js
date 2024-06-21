@@ -1,8 +1,12 @@
 import { configureStore } from "@reduxjs/toolkit";
-import eventReducer from "./features/eventSlice";
+import aboutReducer from "./features/aboutSlice";
+import headerReducer from "./features/headerSlice";
+import featureReducer from "./features/featureSlice";
 
 export default configureStore({
   reducer: {
-    event: eventReducer,
+    header: headerReducer,
+    about: aboutReducer,
+    feature: featureReducer,
   },
 });

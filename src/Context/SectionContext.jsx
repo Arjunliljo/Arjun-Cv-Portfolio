@@ -1,14 +1,26 @@
 import { createContext } from "preact";
-import { useContext, useEffect, useReducer, useRef } from "preact/hooks";
+import {
+  useContext,
+  useEffect,
+  useReducer,
+  useRef,
+  useState,
+} from "preact/hooks";
 import { useDispatch, useSelector } from "react-redux";
 
 const SectionContext = createContext();
 
 function SectionProvider({ children }) {
-  const reduxDispatch = useDispatch();
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 900);
 
   return (
-    <SectionContext.Provider value={{}}>{children}</SectionContext.Provider>
+    <SectionContext.Provider
+      value={{
+        isMobile,
+      }}
+    >
+      {children}
+    </SectionContext.Provider>
   );
 }
 

@@ -2,19 +2,15 @@ import { createSlice, current } from "@reduxjs/toolkit";
 
 const initialState = {
   isAbout: false,
-  isCards: false,
 };
 
 export const eventSlice = createSlice({
-  name: "observer",
+  name: "about",
   initialState,
 
   reducers: {
     setIsAbout: (state, action) => {
       state.isAbout = action.payload;
-    },
-    isCards: (state, action) => {
-      state.isCards = action.payload;
     },
   },
 });

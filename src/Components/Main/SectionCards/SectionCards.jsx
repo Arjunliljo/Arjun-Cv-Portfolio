@@ -1,53 +1,118 @@
-import { useRef, useEffect } from "preact/hooks";
+import { useEffect, useMemo, useRef, useState } from "preact/hooks";
+import ExpressSvg from "../../Utility/SmallUtilities/ExpressSvg";
+import MongoSvg from "../../Utility/SmallUtilities/MongoSvg";
+import NodeSvg from "../../Utility/SmallUtilities/NodeSvg";
+import ReactSvg from "../../Utility/SmallUtilities/ReactSvg";
+import FeatureBox from "./FeatureBox";
 import { useSection } from "../../../Context/SectionContext";
-import SecondaryBtn from "../../Utility/Buttons/SecondaryBtn";
-import Headings from "../../Utility/Headings";
-import HeadingsThertiary from "../../Utility/HeadingsThertiary";
-import Composition from "./Composition";
+import { useObserver } from "../../../Hooks/useObeserver";
+import { useSelector } from "react-redux";
+import { setIsFeature } from "../../../App/features/featureSlice";
 
-function SectionAbout() {
-  //   const { sectionObserver } = useSection();
+const img = new Image();
 
-  const cardSection = useRef("");
+function SectionCards() {
+  const [imageLoaded, setImageLoaded] = useState(false);
+  const [imgSrc, setImgSrc] = useState(null);
 
-  //   useEffect(() => {
-  //     sectionObserver.observe(cardSection.current);
-  //   }, []);
+  useEffect(() => {
+    const img = new Image();
+    img.src =
+      "https://img.freepik.com/free-vector/blue-futuristic-networking-technology_53876-97395.jpg?t=st=1709482773~exp=1709486373~hmac=e13e6ec0d99fce76bf237fab325a80436fd2f6bbd6ea98f37bc37ccd46541f8f&w=900";
+    img.onload = () => {
+      setImageLoaded(true);
+      setImgSrc(img.src); // Once loaded, set the image source
+    };
+    img.onerror = () => {
+      console.error("Failed to load image");
+    };
+  }, []);
+
+  const isFeature = useSelector((state) => state.feature.isFeature);
+  const [callBack] = useObserver(setIsFeature, true, false);
+  const featureEl = useRef(null);
+  const { isMobile } = useSection();
+
+  const threshold = isMobile ? 0 : 0.3;
+
+  const featureObserver = useMemo(() => {
+    return new IntersectionObserver(callBack, {
+      root: null,
+      threshold,
+    });
+  }, [callBack, threshold]);
+
+  useEffect(() => {
+    if (featureEl.current) {
+      featureObserver.observe(featureEl.current);
+    }
+    return () => {
+      if (featureEl.current) {
+        featureObserver.unobserve(featureEl.current);
+      }
+    };
+  }, [featureObserver]);
+
+  console.log(isFeature);
 
   return (
-    <section ref={cardSection} className="section-about" id="sectionCards">
-      <Headings>About</Headings>
+    <section
+      ref={featureEl}
+      className="section-features"
+      id="sectionFeatureBox"
+      style={{
+        backgroundImage: `linear-gradient(to right bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url(${
+          imgSrc || "../img/featuresBg.png"
+        })`,
+      }}
+    >
+      <div className="section-features__row">
+        <FeatureBox
+          type="mongo"
+          style={
+            isFeature
+              ? { transform: "translateY(0)" }
+              : { transform: "translateY(8rem)" }
+          }
+        >
+          <MongoSvg />
+        </FeatureBox>
 
-      <div className="section-about__grid">
-        <div className="section-about__grid-c">
-          <HeadingsThertiary>Building the Future</HeadingsThertiary>
-          <p className="paragraph">
-            Having transitioned from the world of graphic design, I'm now a
-            full-stack developer fueled by a passion for building dynamic
-            experiences. With a year of coding under my belt and a love for
-            tackling LeetCode challenges, I'm eager to leverage my creativity
-            and technical skills to bring innovative solutions to life.
-          </p>
+        <FeatureBox
+          type="express"
+          style={
+            isFeature
+              ? { transform: "translateY(0)" }
+              : { transform: "translateY(16rem)" }
+          }
+        >
+          <ExpressSvg />
+        </FeatureBox>
 
-          <HeadingsThertiary>From Design to Development</HeadingsThertiary>
-          <p className="paragraph">
-            My journey in tech began with crafting visuals, but my passion
-            evolved to building the interactive experiences behind them. Now, as
-            a MERN Stack developer, I bridge design and development,
-            transforming ideas into dynamic solutions.
-          </p>
+        <FeatureBox
+          type="react"
+          style={
+            isFeature
+              ? { transform: "translateY(0)" }
+              : { transform: "translateY(32rem)" }
+          }
+        >
+          <ReactSvg />
+        </FeatureBox>
 
-          <SecondaryBtn hyper="https://www.linkedin.com/in/arjun-cv/">
-            Know more →
-          </SecondaryBtn>
-        </div>
-
-        <div className="section-about__grid-c">
-          <Composition />
-        </div>
+        <FeatureBox
+          type="node"
+          style={
+            isFeature
+              ? { transform: "translateY(0)" }
+              : { transform: "translateY(62rem)" }
+          }
+        >
+          <NodeSvg />
+        </FeatureBox>
       </div>
     </section>
   );
 }
 
-export default SectionAbout;
+export default SectionCards;

@@ -58,7 +58,7 @@ section {
   min-height: 80vh;
   max-width: 100%;
   margin-top: -12rem;
-  clip-path: polygon(0 15vh, 100% 0%, 100% 85%, 0 100%);
+  clip-path: polygon(0 15vh, 100% 0%, 100% 95vh, 0 100%);
 }
 @media (max-width: 1200px) {
   section {
@@ -177,6 +177,28 @@ section {
   50% {
     fill: rgb(255, 6, 255);
     color: rgb(226, 226, 226);
+  }
+}
+@keyframes rotate {
+  from {
+    transform: rotate(30deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
+@property --a {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 0deg;
+}
+/* Define keyframes animation */
+@keyframes featureBoxAnim {
+  0% {
+    --a: 0deg;
+  }
+  100% {
+    --a: 360deg;
   }
 }
 @keyframes social-anim {
@@ -389,7 +411,7 @@ section {
 }
 
 .header {
-  height: 90vh;
+  height: 95vh;
   width: 100%;
   background-image: linear-gradient(to right bottom, black, #2e0249);
   overflow: hidden;
@@ -398,8 +420,9 @@ section {
   /* top position of the image remains stable while bottom will be croped while adjustiing the screen size because of box-sizing  */
   background-position: top;
   /* in these x and y axis contained area shuould be visible in the header */
-  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+  clip-path: polygon(0 0, 100% 0, 100% 80vh, 0 100%);
   position: relative;
+  transition: all 1s;
 }
 @media (max-width: 900px) {
   .header {
@@ -613,11 +636,13 @@ body {
   font-size: 5rem;
   font-weight: 700;
   text-transform: uppercase;
-  background-image: linear-gradient(100deg, #030637, rgb(255, 6, 255));
+  background-image: linear-gradient(var(--a), #030637, rgb(255, 6, 255));
+  animation: featureBoxAnim 6s linear infinite;
   background-clip: text;
   color: transparent;
   line-height: normal;
-  transition: all 0.5s;
+  transition: all 1s;
+  transform-origin: left;
   cursor: pointer;
 }
 .heading-secondary:hover {
@@ -647,6 +672,8 @@ body {
 .paragraph {
   font-size: 1.6rem;
   color: #a8a8a8;
+  transition: transform 1s ease;
+  transform-origin: left;
 }
 .paragraph:not(:last-child) {
   margin-bottom: 3rem;
@@ -775,9 +802,7 @@ body {
 }
 
 .section-about {
-  background-color: #141530;
-  transform: translateY(10rem);
-  opacity: 0;
+  background-color: #11122b;
   transition: 1s all;
 }
 .section-about__grid {
@@ -801,6 +826,7 @@ body {
 .composition {
   position: relative;
   transition: all 1s;
+  transform-origin: bottom;
 }
 @media (max-width: 900px) {
   .composition {
@@ -861,6 +887,107 @@ body {
 }
 .composition:hover .composition__photo:not(:hover) {
   transform: scale(1);
+}
+
+@media (max-width: 900px) {
+  .section-features {
+    margin-top: 1rem;
+    padding-bottom: 10rem;
+    padding-top: 30rem;
+  }
+}
+.section-features__row {
+  padding: 15rem 0;
+  display: grid;
+  gap: 3rem;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.feature-box {
+  background-image: linear-gradient(var(--a), transparent, rgb(255, 6, 255));
+  animation: featureBoxAnim 4s linear infinite;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  padding: 2.5rem;
+  border-radius: 2px;
+  box-shadow: 0px 1rem 2rem rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+  text-wrap: nowrap;
+  transition: transform 1s;
+  position: relative;
+  height: 39rem;
+  z-index: 100;
+}
+.feature-box::before {
+  content: "";
+  height: 98%;
+  width: 96%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translate(2%, 1%);
+  background-color: rgb(0, 0, 0);
+  color: black;
+  z-index: -1;
+}
+@media (max-width: 900px) {
+  .feature-box {
+    padding: 5rem;
+    height: auto;
+  }
+}
+@media (max-width: 900px) {
+  .feature-box {
+    font-size: 3rem;
+  }
+}
+.feature-box__icon {
+  height: 8rem;
+  padding-bottom: 0.5rem;
+  display: inline-block;
+  background: linear-gradient(to right, rgb(255, 6, 255), #470034);
+  background-clip: text;
+  color: transparent;
+  animation: bulb-2 7s linear infinite both;
+}
+@media (max-width: 900px) {
+  .feature-box__icon {
+    width: 12rem;
+    height: 12rem;
+  }
+}
+.feature-box__text {
+  text-align: center;
+  text-wrap: balance;
+  text-transform: none;
+}
+.feature-box:hover {
+  transform: translateY(-1.5rem) scale(1.05) !important;
+}
+@media (max-width: 900px) {
+  .feature-box:hover {
+    transform: translateY(0rem) scale(1);
+  }
+}
+
+.icon-anim {
+  fill: #a91079;
+  animation: bulb-2 7s linear infinite both;
+}
+
+.node,
+.react {
+  height: 7rem;
+  width: 7rem;
+  margin: 0.5rem 0;
+}
+@media (max-width: 900px) {
+  .node,
+  .react {
+    height: 12rem;
+    width: 12rem;
+  }
 }
 
 /*# sourceMappingURL=style.prefix.css.map */

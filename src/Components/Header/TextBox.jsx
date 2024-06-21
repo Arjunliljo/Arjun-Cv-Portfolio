@@ -79,6 +79,7 @@ function TextBox() {
         download="Arjun-Cv-Resume.pdf"
         target="_blank"
         rel="noopener noreferrer"
+        aria-label="Download Arjun Cv's Resume"
       >
         Download Resume
       </a>

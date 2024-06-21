@@ -7,10 +7,8 @@ export function useObserver(currFunction, firstArg, secArg) {
     const [intersect] = entries;
     if (intersect.isIntersecting) {
       reduxDispatch(currFunction(firstArg));
-      console.log(firstArg);
     } else {
       reduxDispatch(currFunction(secArg));
-      console.log(secArg);
     }
   }
 
