@@ -481,7 +481,7 @@ section {
   background-size: contain;
   animation: main-img-anim 1.5s ease-in-out;
 }
-@media (max-width: 900px) {
+@media (max-width: 1200px) {
   .main-img {
     right: 50%;
     transform: translateX(50%);
@@ -813,7 +813,7 @@ body {
 @media (max-width: 900px) {
   .section-about__grid {
     grid-template-columns: 1fr;
-    gap: 0rem;
+    gap: 7rem;
     grid-template-rows: 80rem 40rem;
   }
 }
@@ -889,22 +889,35 @@ body {
   transform: scale(1);
 }
 
-@media (max-width: 900px) {
-  .section-features {
-    margin-top: 1rem;
-    padding-bottom: 10rem;
-    padding-top: 30rem;
-  }
-}
 .section-features__row {
   padding: 15rem 0;
   display: grid;
   gap: 3rem;
   grid-template-columns: repeat(4, 1fr);
 }
+@media (max-width: 1200px) {
+  .section-features__row {
+    grid-template-columns: 1fr 1fr;
+    padding: 5rem;
+  }
+}
+@media (max-width: 600px) {
+  .section-features__row {
+    grid-template-columns: 1fr;
+    row-gap: 8rem;
+    padding: 3rem;
+  }
+}
+.section-features__col {
+  width: 100%;
+  height: 100%;
+}
 
 .feature-box {
+  max-height: 100% !important;
+  max-height: 100% !important;
   background-image: linear-gradient(var(--a), transparent, rgb(255, 6, 255));
+  width: 100%;
   animation: featureBoxAnim 4s linear infinite;
   text-align: center;
   text-transform: uppercase;
