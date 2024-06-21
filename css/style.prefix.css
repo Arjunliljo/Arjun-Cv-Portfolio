@@ -1003,4 +1003,192 @@ body {
   }
 }
 
+.section-projects {
+  background-color: #f7f7f7;
+  padding-bottom: 20rem;
+  margin-top: -15rem;
+  background-image: linear-gradient(to right bottom, rgba(3, 6, 55, 0.8), rgba(0, 0, 0, 0.8)), url("../img/section-tours-background-2.png");
+  background-size: cover;
+  clip-path: polygon(0 20vh, 100% 0%, 100% 120vh, 0 100%);
+}
+
+.card {
+  perspective: 150rem;
+  -moz-perspective: 150rem;
+  position: relative;
+  cursor: pointer;
+  height: 45rem;
+}
+.card__side {
+  height: 45rem;
+  text-align: center;
+  text-transform: uppercase;
+  border-radius: 5px;
+  cursor: pointer;
+  overflow: hidden;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  box-shadow: 0rem 1.5rem 4rem rgba(0, 0, 0, 0.15);
+  transition: transform 1s ease;
+}
+.card__side--front {
+  background-color: #11122b;
+}
+.card__side--back {
+  transform: rotateY(180deg);
+  margin: 0 auto;
+}
+.card__side--back-1 {
+  background-image: linear-gradient(to right bottom, #0059ff, #2e0249);
+}
+.card__side--back-2 {
+  background-image: linear-gradient(to right bottom, #7edf6f, #28b485);
+}
+.card__side--back-3 {
+  background-image: linear-gradient(to right bottom, rgb(255, 6, 255), #470034);
+}
+.card--text {
+  text-transform: none;
+}
+.card:hover .card__side--front {
+  transform: rotateY(-180deg);
+}
+.card:hover .card__side--back {
+  transform: rotateY(0deg);
+}
+.card__picture {
+  background-size: cover;
+  height: 20rem;
+  background-blend-mode: multiply;
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+  clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+}
+.card__picture--1 {
+  background-image: linear-gradient(to right bottom, #0059ff, #2e0249), url(../img/traveller-image.jpg);
+}
+.card__picture--2 {
+  background-image: url(../img/nat-4.jpg);
+  background-image: linear-gradient(to right bottom, #fbfcc5, #28b485), url(https://img.freepik.com/free-vector/drawing-concept-vintage-world-map_52683-26379.jpg?t=st=1711204289~exp=1711207889~hmac=2aaa29c3c155af0133a96aab428805c82892819b951801ecaa66df9ac05fac45&w=900);
+}
+.card__picture--3 {
+  background-image: url(../img/nat-3.jpg);
+  background-image: linear-gradient(to right bottom, rgb(255, 6, 255), #470034), url(../img/The-Pig-game.jpg);
+}
+.card__heading {
+  text-align: right;
+  text-transform: uppercase;
+  color: #fff;
+  font-size: 2.6rem;
+  font-weight: 300;
+  position: absolute;
+  top: 12rem;
+  right: 1rem;
+  width: 60%;
+}
+@media (max-width: 900px) {
+  .card__heading {
+    font-size: 4rem;
+  }
+}
+.card__heading--span {
+  padding: 1rem;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
+.card__heading--span-1 {
+  background-image: linear-gradient(to right, rgba(0, 89, 255, 0.8), rgba(46, 2, 73, 0.8));
+}
+.card__heading--span-2 {
+  background-image: linear-gradient(to right, rgba(251, 252, 197, 0.8), rgba(40, 180, 133, 0.8));
+}
+.card__heading--span-3 {
+  background-image: linear-gradient(to right, rgba(255, 6, 255, 0.8), rgba(71, 0, 52, 0.8));
+}
+.card__details {
+  width: 80%;
+  margin: 0 auto;
+  font-size: 1.2rem;
+  padding: 3rem;
+}
+@media (max-width: 900px) {
+  .card__details {
+    font-size: 2.5rem;
+  }
+}
+.card__details ul {
+  text-decoration: none;
+  list-style: none;
+  font-weight: 700;
+}
+.card__details ul li {
+  padding: 0.9rem;
+}
+.card__details ul li:not(:last-child) {
+  border-bottom: 1px solid #eee;
+}
+.card__cta {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  height: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.card__price-box {
+  text-align: center;
+  color: #fff;
+}
+.card__price-only {
+  font-size: 1.4rem;
+  font-weight: 300;
+  text-transform: uppercase;
+}
+.card__price-value {
+  font-family: "Roboto";
+  font-weight: 300;
+  font-size: 4rem;
+  margin-bottom: 8rem;
+}
+@media only screen and (max-width: 56.25em), only screen and (hover: none) {
+  .card {
+    height: auto;
+    border-radius: 3px;
+    background-color: transparent;
+    box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15);
+  }
+  .card__side {
+    height: auto;
+    position: relative;
+    box-shadow: none;
+  }
+  .card__side--back {
+    transform: rotateY(0);
+  }
+  .card__side--front {
+    transform: rotateY(0deg);
+  }
+  .card:hover .card__side--front {
+    transform: rotateY(0);
+  }
+  .card__details {
+    padding: 3rem;
+    margin-top: 3rem;
+  }
+  .card__cta {
+    position: relative;
+    top: -13rem;
+    left: 0;
+    transform: translate(0);
+    width: 100%;
+  }
+}
+
 /*# sourceMappingURL=style.prefix.css.map */
