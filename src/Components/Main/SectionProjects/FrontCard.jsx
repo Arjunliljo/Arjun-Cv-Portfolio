@@ -39,7 +39,7 @@ function FrontCard({ name, id }) {
   return (
     <article className="card__side card__side--front">
       <header className={`card__picture card__picture--${id}`}></header>
-      <h4 className="card__heading card__heading--1">
+      <h4 className="card__heading card__heading--1" aria-label="project title">
         <span className={`card__heading--span card__heading--span-${id}`}>
           {shortDesc}
         </span>

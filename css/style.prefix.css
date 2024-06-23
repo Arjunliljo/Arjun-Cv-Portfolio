@@ -57,8 +57,8 @@ section {
   padding: 8rem 10rem;
   min-height: 80vh;
   max-width: 100%;
-  margin-top: -12rem;
-  clip-path: polygon(0 15vh, 100% 0%, 100% 95vh, 0 100%);
+  margin-top: -12.5rem;
+  clip-path: polygon(0 14%, 100% 0%, 100% 85%, 0 100%);
 }
 @media (max-width: 1200px) {
   section {
@@ -70,7 +70,7 @@ section {
   section {
     margin: 0;
     padding: 5rem;
-    clip-path: none;
+    clip-path: none !important;
   }
 }
 
@@ -1005,11 +1005,18 @@ body {
 
 .section-projects {
   background-color: #f7f7f7;
-  padding-bottom: 20rem;
   margin-top: -15rem;
+  padding: 8rem 2rem;
+  padding-bottom: 20rem;
   background-image: linear-gradient(to right bottom, rgba(3, 6, 55, 0.8), rgba(0, 0, 0, 0.8)), url("../img/section-tours-background-2.png");
   background-size: cover;
-  clip-path: polygon(0 20vh, 100% 0%, 100% 120vh, 0 100%);
+  clip-path: polygon(0 20vh, 100% 0%, 100% 130vh, 0 100%);
+}
+@media (max-width: 600px) {
+  .section-projects {
+    clip-path: none;
+    margin-top: 0rem;
+  }
 }
 
 .card {

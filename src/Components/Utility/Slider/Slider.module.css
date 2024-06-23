@@ -1,14 +1,14 @@
 .container {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
+  gap: 2rem;
 }
 .slider {
   display: flex;
   align-items: center;
-  justify-content: space-between;
   overflow: hidden;
-  margin: 0 auto;
+  transition: all 1s;
 }
 .row {
   display: flex;

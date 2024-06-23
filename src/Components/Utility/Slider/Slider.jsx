@@ -1,23 +1,24 @@
 import React from "react";
 import styles from "./Slider.module.css";
 import { useState } from "preact/hooks";
+import SliderButton from "./SliderButton";
 
 function Slider({
   children,
   items = 3,
   gap = "30px",
-  childWidth = "300px",
-  buttonBack,
-  buttonFront,
+  childWidth = "280px",
+  sliderStyle,
+  isMobile,
+  totalItem,
 }) {
   const numericGap = parseInt(gap);
   const numericChildWidth = parseInt(childWidth);
   // Calculate the total width of the container
-  const totalWidth =
-    items * numericChildWidth + (items - 1) * numericGap + "px";
-  const totalItemsWidth =
-    React.Children.count(children) * numericChildWidth +
-    (React.Children.count(children) - 1) * numericGap;
+  const itemWidth = numericChildWidth + numericGap;
+  const shoWidth = numericChildWidth * items + numericGap * (items - 1);
+
+  const totalItemsWidth = (React.Children.count(children) - items) * itemWidth;
 
   const [translate, setTranslate] = useState(0);
 
@@ -26,26 +27,28 @@ function Slider({
   };
 
   const handleFront = () => {
-    if (translate >= (numericGap + numericChildWidth) * items) {
+    if (translate >= totalItemsWidth) {
       return;
     }
-    setTranslate((trans) => trans + (numericGap + numericChildWidth));
+    setTranslate((trans) => trans + itemWidth);
   };
   const handleBack = () => {
     if (translate === 0) {
       return;
     }
 
-    setTranslate((trans) => trans - (numericGap + numericChildWidth));
+    setTranslate((trans) => trans - itemWidth);
   };
 
   return (
     <>
       <div className={styles.container}>
-        <button onClick={handleBack} className={styles.btn}>
-          {"<-"}
-        </button>
-        <div className={styles.slider} style={{ width: totalWidth }}>
+        <SliderButton onClick={handleBack} />
+
+        <div
+          className={styles.slider}
+          style={{ width: shoWidth, ...sliderStyle }}
+        >
           <div
             className={styles.row}
             style={{ gap, transform: `translateX(-${translate}px)` }}
@@ -60,9 +63,7 @@ function Slider({
             )}
           </div>
         </div>
-        <button onClick={handleFront} className={styles.btn}>
-          {"->"}
-        </button>
+        <SliderButton onClick={handleFront} type="forward" />
       </div>
     </>
   );

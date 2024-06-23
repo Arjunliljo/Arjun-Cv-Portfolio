@@ -13,6 +13,19 @@ const SectionContext = createContext();
 function SectionProvider({ children }) {
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 900);
 
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 900);
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    // Cleanup function to remove the event listener
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
   return (
     <SectionContext.Provider
       value={{

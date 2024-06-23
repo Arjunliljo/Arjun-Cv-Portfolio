@@ -1,5 +1,4 @@
 function BackCard({ type, id }) {
-  console.log(id);
   return (
     <article className={`card__side card__side--back card__side--back-${id}`}>
       <div className="card__cta">

@@ -53,8 +53,6 @@ function SectionCards() {
     };
   }, [featureObserver]);
 
-  console.log(isFeature);
-
   return (
     <section
       ref={featureEl}
@@ -70,9 +68,7 @@ function SectionCards() {
         <FeatureBox
           type="mongo"
           style={
-            isFeature
-              ? { transform: "translateY(0)" }
-              : { transform: "translateY(8rem)" }
+            isFeature ? { transform: "scale(1)" } : { transform: "scale(0)" }
           }
         >
           <MongoSvg />
@@ -81,9 +77,7 @@ function SectionCards() {
         <FeatureBox
           type="express"
           style={
-            isFeature
-              ? { transform: "translateY(0)", opacity: "1" }
-              : { transform: "translateY(10rem)", opacity: "0" }
+            isFeature ? { transform: "scale(1)" } : { transform: "scale(0)" }
           }
         >
           <ExpressSvg />
@@ -92,9 +86,7 @@ function SectionCards() {
         <FeatureBox
           type="react"
           style={
-            isFeature
-              ? { transform: "translateY(0)", opacity: "1" }
-              : { transform: "translateY(12rem)" }
+            isFeature ? { transform: "scale(1)" } : { transform: "scale(0)" }
           }
         >
           <ReactSvg />
@@ -103,9 +95,7 @@ function SectionCards() {
         <FeatureBox
           type="node"
           style={
-            isFeature
-              ? { transform: "translateY(0)", opacity: "1" }
-              : { transform: "translateY(14rem)", opacity: "0" }
+            isFeature ? { transform: "scale(1)" } : { transform: "scale(0)" }
           }
         >
           <NodeSvg />
