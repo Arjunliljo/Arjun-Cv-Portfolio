@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./Slider.module.css";
-import { useState } from "preact/hooks";
+import { useEffect, useState } from "preact/hooks";
 import SliderButton from "./SliderButton";
 
 function Slider({
@@ -9,9 +9,10 @@ function Slider({
   gap = "30px",
   childWidth = "280px",
   sliderStyle,
-  isMobile,
-  totalItem,
+  auto = false,
 }) {
+  const [isHover, setIsHover] = useState(false);
+
   const numericGap = parseInt(gap);
   const numericChildWidth = parseInt(childWidth);
   // Calculate the total width of the container
@@ -25,11 +26,34 @@ function Slider({
   const style = {
     gap: gap,
   };
+  console.log(translate, totalItemsWidth);
+
+  useEffect(() => {
+    if (!auto || isHover) return;
+
+    let autoInterval, timeout;
+
+    if (translate >= totalItemsWidth) {
+      timeout = setTimeout(() => {
+        setTranslate(0);
+      }, 2000);
+    } else {
+      autoInterval = setInterval(() => {
+        setTranslate((trans) => trans + itemWidth);
+      }, 2000);
+    }
+
+    return () => {
+      clearInterval(autoInterval);
+      clearTimeout(timeout);
+    };
+  }, [auto, isHover, translate, totalItemsWidth, itemWidth]);
 
   const handleFront = () => {
     if (translate >= totalItemsWidth) {
       return;
     }
+
     setTranslate((trans) => trans + itemWidth);
   };
   const handleBack = () => {
@@ -43,12 +67,14 @@ function Slider({
   return (
     <>
       <div className={styles.container} style={sliderStyle}>
-        <SliderButton onClick={handleBack} />
+        {auto ? "" : <SliderButton onClick={handleBack} />}
 
         <div className={styles.slider} style={{ width: shoWidth }}>
           <div
             className={styles.row}
             style={{ gap, transform: `translateX(-${translate}px)` }}
+            onMouseEnter={() => setIsHover(true)}
+            onMouseLeave={() => setIsHover(false)}
           >
             {React.Children.map(children, (child) =>
               React.cloneElement(child, {
@@ -61,7 +87,7 @@ function Slider({
           </div>
         </div>
 
-        <SliderButton onClick={handleFront} type="forward" />
+        {auto ? "" : <SliderButton onClick={handleFront} type="forward" />}
       </div>
     </>
   );
