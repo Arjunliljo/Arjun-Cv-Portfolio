@@ -4,6 +4,7 @@ import { useEffect, useRef } from "preact/hooks";
 import { useSection } from "../../Context/SectionContext";
 import SectionCards from "./SectionCards/SectionCards";
 import SectionProjects from "./SectionProjects/SectionProjects";
+import SectionTechs from "./SectionTechs/SectionTechs";
 
 function Main() {
   return (
@@ -11,6 +12,7 @@ function Main() {
       <SectionAbout></SectionAbout>
       <SectionCards></SectionCards>
       <SectionProjects></SectionProjects>
+      <SectionTechs />
     </main>
   );
 }

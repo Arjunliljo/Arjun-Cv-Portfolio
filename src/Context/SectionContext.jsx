@@ -11,11 +11,18 @@ import { useDispatch, useSelector } from "react-redux";
 const SectionContext = createContext();
 
 function SectionProvider({ children }) {
-  const [isMobile, setIsMobile] = useState(window.innerWidth <= 900);
+  const [isMobile, setIsMobile] = useState(
+    window.innerWidth <= 600 && window.innerWidth < 900
+  );
+
+  const [isTab, setIsTab] = useState(
+    window.innerWidth > 600 && window.innerWidth <= 1400
+  );
 
   useEffect(() => {
     const handleResize = () => {
-      setIsMobile(window.innerWidth <= 900);
+      setIsMobile(window.innerWidth <= 600 && window.innerWidth < 900);
+      setIsTab(window.innerWidth > 600 && window.innerWidth <= 1400);
     };
 
     window.addEventListener("resize", handleResize);
@@ -30,6 +37,7 @@ function SectionProvider({ children }) {
     <SectionContext.Provider
       value={{
         isMobile,
+        isTab,
       }}
     >
       {children}

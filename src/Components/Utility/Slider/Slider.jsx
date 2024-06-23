@@ -42,13 +42,10 @@ function Slider({
 
   return (
     <>
-      <div className={styles.container}>
+      <div className={styles.container} style={sliderStyle}>
         <SliderButton onClick={handleBack} />
 
-        <div
-          className={styles.slider}
-          style={{ width: shoWidth, ...sliderStyle }}
-        >
+        <div className={styles.slider} style={{ width: shoWidth }}>
           <div
             className={styles.row}
             style={{ gap, transform: `translateX(-${translate}px)` }}
@@ -63,6 +60,7 @@ function Slider({
             )}
           </div>
         </div>
+
         <SliderButton onClick={handleFront} type="forward" />
       </div>
     </>

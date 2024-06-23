@@ -3,12 +3,13 @@
   align-items: center;
   justify-content: center;
   gap: 2rem;
+  transition: all 1s cubic-bezier(0.66, 0.44, 0.57, 1.58);
 }
+
 .slider {
   display: flex;
   align-items: center;
   overflow: hidden;
-  transition: all 1s;
 }
 .row {
   display: flex;

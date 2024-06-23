@@ -10,7 +10,7 @@ import { useSelector } from "react-redux";
 function SectionProjects() {
   const isProject = useSelector((state) => state.project.isProject);
 
-  const { isMobile } = useSection();
+  const { isMobile, isTab } = useSection();
   const [callBack] = useObserver(setIsProject, true, false);
 
   const threshold = isMobile ? 0 : 0.3;
@@ -53,13 +53,22 @@ function SectionProjects() {
       </Headings>
 
       <Slider
-        items={isMobile ? 1 : 3}
+        items={isMobile ? 1 : isTab ? 2 : 3}
+        childWidth={isMobile ? "220px" : "280px"}
         sliderStyle={
-          isProject ? { transform: "scale(1)" } : { transform: "scale(0)" }
+          isProject
+            ? {
+                transform: "scaleX(1)",
+              }
+            : {
+                transform: "scaleX(0)",
+              }
         }
       >
         <ProjectCard type="frontEnd" id={1} name="traveller" />
         <ProjectCard type="frontEnd" id={2} name="mapty" />
+        <ProjectCard type="frontEnd" id={3} name="pigGame" />
+        <ProjectCard type="frontEnd" id={3} name="pigGame" />
         <ProjectCard type="frontEnd" id={3} name="pigGame" />
       </Slider>
 
