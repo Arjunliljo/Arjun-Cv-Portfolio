@@ -1282,13 +1282,6 @@ body {
 }
 @media (max-width: 900px) {
   .story {
-    padding: 4rem;
-    padding-left: 6rem;
-    width: 100%;
-  }
-}
-@media (max-width: 900px) {
-  .story {
     transform: skew(0deg);
   }
 }
