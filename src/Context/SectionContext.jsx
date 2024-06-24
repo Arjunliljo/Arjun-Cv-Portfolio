@@ -1,28 +1,23 @@
 import { createContext } from "preact";
-import { useContext, useEffect, useState, useMemo } from "preact/hooks";
+import { useContext, useEffect, useState, useCallback } from "preact/hooks";
 
 const SectionContext = createContext();
 
 function SectionProvider({ children }) {
-  const [isMobile, setIsMobile] = useState(
-    window.innerWidth <= 600 && window.innerWidth < 900
-  );
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 600);
 
   const [isTab, setIsTab] = useState(
     window.innerWidth > 600 && window.innerWidth <= 1400
   );
 
-  const handleResize = useMemo(() => {
-    return () => {
-      setIsMobile(window.innerWidth <= 600 && window.innerWidth < 900);
-      setIsTab(window.innerWidth > 600 && window.innerWidth <= 1400);
-    };
-  }, [window.innerWidth]);
+  const handleResize = useCallback(() => {
+    setIsMobile(window.innerWidth <= 600);
+    setIsTab(window.innerWidth > 600 && window.innerWidth <= 1400);
+  }, []);
 
   useEffect(() => {
     window.addEventListener("resize", handleResize);
 
-    // Cleanup function to remove the event listener
     return () => {
       window.removeEventListener("resize", handleResize);
     };
