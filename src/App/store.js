@@ -4,6 +4,7 @@ import headerReducer from "./features/headerSlice";
 import featureReducer from "./features/featureSlice";
 import projectReducer from "./features/projectSlice";
 import techReducer from "./features/techSlice";
+import contactReducer from "./features/contactSlice";
 
 export default configureStore({
   reducer: {
@@ -12,5 +13,6 @@ export default configureStore({
     feature: featureReducer,
     project: projectReducer,
     tech: techReducer,
+    contact: contactReducer,
   },
 });

@@ -33,8 +33,7 @@ function SectionTechs() {
       }
     };
   }, []);
-  console.log(isMobile, "isMobile");
-  console.log(isTab, "isTab");
+
   return (
     <section ref={techSection} className="section-stories" id="sectionTechs">
       {isTech && <TechsBg />}
