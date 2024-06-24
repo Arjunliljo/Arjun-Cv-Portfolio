@@ -1236,10 +1236,23 @@ body {
   background-color: rgba(0, 0, 0, 0.5);
   position: relative;
 }
+@media (max-width: 1200px) {
+  .section-stories {
+    clip-path: polygon(0 18rem, 100% 0, 100% 100%, 0 100%);
+    margin-top: -20rem;
+  }
+}
 @media (max-width: 900px) {
   .section-stories {
     clip-path: none;
     margin-top: 0%;
+  }
+}
+@media (max-width: 600px) {
+  .section-stories {
+    padding-left: 0;
+    padding-right: 0;
+    padding-bottom: 10rem;
   }
 }
 

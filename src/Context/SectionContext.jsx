@@ -1,12 +1,5 @@
 import { createContext } from "preact";
-import {
-  useContext,
-  useEffect,
-  useReducer,
-  useRef,
-  useState,
-} from "preact/hooks";
-import { useDispatch, useSelector } from "react-redux";
+import { useContext, useEffect, useState, useMemo } from "preact/hooks";
 
 const SectionContext = createContext();
 
@@ -19,19 +12,21 @@ function SectionProvider({ children }) {
     window.innerWidth > 600 && window.innerWidth <= 1400
   );
 
-  useEffect(() => {
-    const handleResize = () => {
+  const handleResize = useMemo(() => {
+    return () => {
       setIsMobile(window.innerWidth <= 600 && window.innerWidth < 900);
       setIsTab(window.innerWidth > 600 && window.innerWidth <= 1400);
     };
+  }, [window.innerWidth]);
 
+  useEffect(() => {
     window.addEventListener("resize", handleResize);
 
     // Cleanup function to remove the event listener
     return () => {
       window.removeEventListener("resize", handleResize);
     };
-  }, []);
+  }, [handleResize]);
 
   return (
     <SectionContext.Provider

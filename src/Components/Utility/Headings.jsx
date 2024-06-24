@@ -1,6 +1,6 @@
 function Headings({ children, aria, style }) {
   return (
-    <div className="heading-secondary-box" aria-labelledby={aria}>
+    <div className="heading-secondary-box" aria={aria}>
       <h2 className="heading-secondary" style={style}>
         {children}
       </h2>

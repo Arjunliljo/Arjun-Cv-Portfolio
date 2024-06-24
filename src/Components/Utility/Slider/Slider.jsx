@@ -10,6 +10,7 @@ function Slider({
   childWidth = "280px",
   sliderStyle,
   auto = false,
+  pause = false,
 }) {
   const [isHover, setIsHover] = useState(false);
 
@@ -26,28 +27,22 @@ function Slider({
   const style = {
     gap: gap,
   };
-  console.log(translate, totalItemsWidth);
 
   useEffect(() => {
-    if (!auto || isHover) return;
+    if (!auto || isHover || pause) return;
 
-    let autoInterval, timeout;
-
-    if (translate >= totalItemsWidth) {
-      timeout = setTimeout(() => {
-        setTranslate(0);
-      }, 2000);
-    } else {
-      autoInterval = setInterval(() => {
-        setTranslate((trans) => trans + itemWidth);
-      }, 2000);
+    if (translate >= totalItemsWidth + itemWidth) {
+      setTranslate(0);
     }
+
+    const autoInterval = setInterval(() => {
+      setTranslate((trans) => trans + itemWidth);
+    }, 2000);
 
     return () => {
       clearInterval(autoInterval);
-      clearTimeout(timeout);
     };
-  }, [auto, isHover, translate, totalItemsWidth, itemWidth]);
+  }, [auto, pause, isHover, translate, totalItemsWidth, itemWidth]);
 
   const handleFront = () => {
     if (translate >= totalItemsWidth) {
