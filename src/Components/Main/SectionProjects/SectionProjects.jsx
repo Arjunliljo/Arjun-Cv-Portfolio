@@ -66,11 +66,12 @@ function SectionProjects() {
               }
         }
       >
+        <ProjectCard type="frontEnd" id={4} name="popcorn" />
+        <ProjectCard type="frontEnd" id={6} name="worldwise" />
+        <ProjectCard type="frontEnd" id={7} name="reactquiz" />
+        <ProjectCard type="frontEnd" id={5} name="travelist" />
         <ProjectCard type="frontEnd" id={1} name="traveller" />
         <ProjectCard type="frontEnd" id={2} name="mapty" />
-        <ProjectCard type="frontEnd" id={3} name="pigGame" />
-
-        <ProjectCard type="frontEnd" id={3} name="pigGame" />
         <ProjectCard type="frontEnd" id={3} name="pigGame" />
       </Slider>
     </section>

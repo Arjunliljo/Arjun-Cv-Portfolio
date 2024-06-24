@@ -1016,7 +1016,7 @@ body {
 
 .section-projects {
   background-color: #f7f7f7;
-  margin-top: -18rem;
+  margin-top: -19rem;
   padding: 8rem 2rem;
   padding-bottom: 20rem;
   background-image: linear-gradient(to right bottom, rgba(3, 6, 55, 0.8), rgba(0, 0, 0, 0.8)), url("../img/section-tours-background-2.png");
@@ -1080,6 +1080,18 @@ body {
 .card__side--back-3 {
   background-image: linear-gradient(to right bottom, rgb(255, 6, 255), #470034);
 }
+.card__side--back-4 {
+  background-image: linear-gradient(to right bottom, #af24eb, #280238);
+}
+.card__side--back-5 {
+  background-image: linear-gradient(to right bottom, brown, #000000);
+}
+.card__side--back-6 {
+  background-image: linear-gradient(to right bottom, #28b485, #012b12);
+}
+.card__side--back-7 {
+  background-image: linear-gradient(to right bottom, #0c014d, #250335);
+}
 .card--text {
   text-transform: none;
 }
@@ -1100,12 +1112,22 @@ body {
   background-image: linear-gradient(to right bottom, #0059ff, #2e0249), url(../img/traveller-image.jpg);
 }
 .card__picture--2 {
-  background-image: url(../img/nat-4.jpg);
   background-image: linear-gradient(to right bottom, #fbfcc5, #28b485), url("../img/map.avif");
 }
 .card__picture--3 {
-  background-image: url(../img/nat-3.jpg);
   background-image: linear-gradient(to right bottom, rgb(255, 6, 255), #470034), url(../img/The-Pig-game.jpg);
+}
+.card__picture--4 {
+  background-image: linear-gradient(to right bottom, #ffffff, #a716e0), url(../img/movieBg.jpg);
+}
+.card__picture--5 {
+  background-image: linear-gradient(to right bottom, black, #bd6327), url(../img/travelBg.jpg);
+}
+.card__picture--6 {
+  background-image: linear-gradient(to right bottom, #baffb8, rgb(6, 59, 17)), url(../img/worldWiseBg.jpg);
+}
+.card__picture--7 {
+  background-image: linear-gradient(to right bottom, #2516ff, rgb(23, 2, 80)), url(../img/reactBg.jpg);
 }
 .card__heading {
   text-align: right;
@@ -1136,6 +1158,18 @@ body {
 }
 .card__heading--span-3 {
   background-image: linear-gradient(to right, rgba(255, 6, 255, 0.8), rgba(71, 0, 52, 0.8));
+}
+.card__heading--span-4 {
+  background-image: linear-gradient(to right, rgba(90, 2, 124, 0.8), rgba(60, 7, 83, 0.8));
+}
+.card__heading--span-5 {
+  background-image: linear-gradient(to right, rgba(165, 42, 42, 0.8), rgba(95, 38, 5, 0.8));
+}
+.card__heading--span-6 {
+  background-image: linear-gradient(to right, rgba(60, 150, 90, 0.8), rgba(0, 87, 58, 0.8));
+}
+.card__heading--span-7 {
+  background-image: linear-gradient(to right, rgba(28, 0, 73, 0.8), rgba(4, 43, 216, 0.8));
 }
 .card__details {
   width: 80%;
