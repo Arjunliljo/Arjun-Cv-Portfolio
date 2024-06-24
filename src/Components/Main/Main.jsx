@@ -1,17 +1,25 @@
-import SectionAbout from "./SectionAbout/SectionAbout";
-import SectionCards from "./SectionCards/SectionCards";
-import SectionContact from "./SectionContact/SectionContact";
-import SectionProjects from "./SectionProjects/SectionProjects";
-import SectionTechs from "./SectionTechs/SectionTechs";
+import React, { Suspense, lazy } from "react";
+
+const LazySectionAbout = lazy(() => import("./SectionAbout/SectionAbout"));
+const LazySectionCards = lazy(() => import("./SectionCards/SectionCards"));
+const LazySectionProjects = lazy(() =>
+  import("./SectionProjects/SectionProjects")
+);
+const LazySectionTechs = lazy(() => import("./SectionTechs/SectionTechs"));
+const LazySectionContact = lazy(() =>
+  import("./SectionContact/SectionContact")
+);
 
 function Main() {
   return (
     <main>
-      <SectionAbout></SectionAbout>
-      <SectionCards></SectionCards>
-      <SectionProjects></SectionProjects>
-      <SectionTechs />
-      <SectionContact />
+      <Suspense fallback={<div>Loading...</div>}>
+        <LazySectionAbout />
+        <LazySectionCards />
+        <LazySectionProjects />
+        <LazySectionTechs />
+        <LazySectionContact />
+      </Suspense>
     </main>
   );
 }

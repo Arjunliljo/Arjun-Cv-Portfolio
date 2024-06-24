@@ -5,8 +5,11 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "watch:sass": "sass ./sass/main.scss ./css/style.prefix.css -w",
+    "watch:sass": "sass ./sass/main.scss ./css/style.css -w",
     "start": "npm-run-all -p dev watch:sass",
+    "compile:sass": "sass ./sass/main.scss ./css/style.compiled.css",
+    "prefix:css": "postcss --use autoprefixer -b 'last 10 versions' css/style.compiled.css -o css/style.prefix.css",
+    "compress:css": "sass css/style.css css/style.css --style compressed",
     "build": "vite build",
     "preview": "vite preview"
   },

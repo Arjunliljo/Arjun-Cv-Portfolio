@@ -61,8 +61,12 @@ function Slider({
 
   return (
     <>
-      <div className={styles.container} style={sliderStyle}>
-        {auto ? "" : <SliderButton onClick={handleBack} />}
+      <div
+        className={styles.container}
+        style={sliderStyle}
+        aria-label="Image Slider"
+      >
+        {!auto && <SliderButton onClick={handleBack} />}
 
         <div className={styles.slider} style={{ width: shoWidth }}>
           <div
@@ -82,7 +86,7 @@ function Slider({
           </div>
         </div>
 
-        {auto ? "" : <SliderButton onClick={handleFront} type="forward" />}
+        {!auto && <SliderButton onClick={handleFront} type="forward" />}
       </div>
     </>
   );
