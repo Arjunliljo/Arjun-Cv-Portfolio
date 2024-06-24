@@ -20,6 +20,7 @@ break point choices
 
 html {
   font-size: 10px;
+  max-height: 5000px !important;
 }
 @media (max-width: 1200px) {
   html {
@@ -43,8 +44,11 @@ html {
 }
 
 body {
+  max-height: 5000px !important;
+  max-width: 1600px;
   padding: 3rem;
   overflow-x: hidden;
+  margin: 0 auto;
   background-color: #fff;
 }
 @media (max-width: 900px) {
@@ -474,9 +478,8 @@ section {
 
 .main-img {
   width: 25rem;
-  height: 25rem;
   position: absolute;
-  right: 16rem;
+  right: 17rem;
   top: 15rem;
   background-size: contain;
   animation: main-img-anim 1.5s ease-in-out;

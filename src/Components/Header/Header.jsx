@@ -56,7 +56,7 @@ function Header({ children }) {
             </div>
             <TextBox />
             <img
-              src="./img/Arjun-Cv-main.png"
+              src="./img/Arjun-Cv-mainWebp.webp"
               className="main-img"
               alt="Web developer Arjun Cv"
             />

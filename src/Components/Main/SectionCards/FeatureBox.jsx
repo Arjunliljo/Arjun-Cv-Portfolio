@@ -31,7 +31,7 @@ function FeatureBox({ children, type, style }) {
     <div className="section-features__col">
       <div className="feature-box" style={style}>
         {children}
-        <h3 className="header-thertiary u-margin-bottom-small">{title}</h3>
+        <h3 className="header-thertiary">{title}</h3>
         <p className="feature-box__text">{content}</p>
       </div>
     </div>

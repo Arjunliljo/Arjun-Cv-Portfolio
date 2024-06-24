@@ -17,11 +17,10 @@ function SectionCards() {
 
   useEffect(() => {
     const img = new Image();
-    img.src =
-      "https://img.freepik.com/free-vector/blue-futuristic-networking-technology_53876-97395.jpg?t=st=1709482773~exp=1709486373~hmac=e13e6ec0d99fce76bf237fab325a80436fd2f6bbd6ea98f37bc37ccd46541f8f&w=900";
+    img.src = "./img/SectionFeaturesBg.webp";
     img.onload = () => {
       setImageLoaded(true);
-      setImgSrc(img.src); // Once loaded, set the image source
+      setImgSrc(img.src);
     };
     img.onerror = () => {
       console.error("Failed to load image");
