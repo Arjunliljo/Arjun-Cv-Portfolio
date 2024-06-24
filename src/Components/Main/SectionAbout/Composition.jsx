@@ -10,17 +10,17 @@ function Composition() {
       style={isAbout ? { transform: "scale(1)" } : { transform: "scale(0)" }}
     >
       <img
-        src="img/Certificate.png"
+        src="./img/Certificate.png"
         alt="Photo 1"
         className="composition__photo composition__photo--p1"
       />
       <img
-        src="img/Certificate.png"
+        src="./img/Certificate.png"
         alt="Photo 2"
         className="composition__photo composition__photo--p2"
       />
       <img
-        src="img/Certificate.png"
+        src="./img/Certificate.png"
         alt="Photo 3"
         className="composition__photo composition__photo--p3"
       />
