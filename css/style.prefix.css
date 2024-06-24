@@ -1586,9 +1586,14 @@ body {
   justify-content: center;
   gap: 3rem;
 }
+@media (max-width: 1200px) {
+  .footer {
+    font-size: 2rem;
+  }
+}
 .footer__row {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
   gap: 2rem;
 }
 .footer__col {
