@@ -1,5 +1,4 @@
 import { useSelector } from "react-redux";
-import { useSection } from "../../../Context/SectionContext";
 
 function Composition() {
   const isAbout = useSelector((state) => state.about.isAbout);
@@ -9,21 +8,39 @@ function Composition() {
       className="composition"
       style={isAbout ? { transform: "scale(1)" } : { transform: "scale(0)" }}
     >
-      <img
-        src="img/Certificate.png"
-        alt="Photo 1"
-        className="composition__photo composition__photo--p1"
-      />
-      <img
-        src="img/Certificate.png"
-        alt="Photo 2"
-        className="composition__photo composition__photo--p2"
-      />
-      <img
-        src="img/Certificate.png"
-        alt="Photo 3"
-        className="composition__photo composition__photo--p3"
-      />
+      <a
+        href="https://www.testdome.com/certificates/42a562f12b5144ba880827e9d1931c9c"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <img
+          src="img/ReactCertificate.webp"
+          alt="React Certificate 1"
+          className="composition__photo composition__photo--p1"
+        />
+      </a>
+      <a
+        href="https://www.testdome.com/certificates/42a562f12b5144ba880827e9d1931c9c"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <img
+          src="img/ReactCertificate.webp"
+          alt="React Certificate 2"
+          className="composition__photo composition__photo--p2"
+        />
+      </a>
+      <a
+        href="https://www.testdome.com/certificates/42a562f12b5144ba880827e9d1931c9c"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <img
+          src="img/ReactCertificate.webp"
+          alt="React Certificate 3"
+          className="composition__photo composition__photo--p3"
+        />
+      </a>
     </div>
   );
 }

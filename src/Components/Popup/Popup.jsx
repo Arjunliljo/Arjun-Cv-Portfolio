@@ -32,6 +32,7 @@ function Popup() {
             <a
               href={live}
               target="_blank"
+              rel="noopener noreferrer"
               className="btn btn-blue project-live"
               aria-label={`Visit live site`}
             >
@@ -40,6 +41,7 @@ function Popup() {
             <a
               href={git}
               target="_blank"
+              rel="noopener noreferrer"
               className="btn btn-blue project-github"
               style={{ marginLeft: ".8rem" }}
               aria-label={`View repository`}
