@@ -1,8 +1,11 @@
 export function useProject(name) {
-  let shortDesc, features, desciption, thumbnail, title, projectName;
+  let shortDesc, features, desciption, thumbnail, projectName, live, git;
 
   switch (name) {
     case "reactquiz":
+      live = "https://react-quiz-mocha-alpha.vercel.app/";
+      git = "https://github.com/Arjunliljo/react-quiz.git";
+      thumbnail = "./img/ReactQuiz.webp";
       shortDesc = "React quiz app";
       projectName = "React Quiz App";
       features = [
@@ -16,6 +19,9 @@ export function useProject(name) {
         "This project is a React-based quiz application offering an interactive experience. Users answer multiple-choice questions on various topics, earning points for correct answers. The app uses useReducer for state management and features a start screen, progress bar, timer, and a finished screen displaying scores and high scores. Responsive design ensures usability across devices. Error handling and loading states are included, displaying messages if data fetching fails. The app initializes with predefined questions to guarantee functionality without external data. Overall, this React Quiz App provides a smooth and engaging quiz experience with a user-friendly interface.";
       break;
     case "worldwise":
+      thumbnail = "./img/wwThumbnail.webp";
+      live = "https://world-wise-rose-zeta.vercel.app/";
+      git = "https://github.com/Arjunliljo/World-Wise.git";
       shortDesc = "Mark the world";
       projectName = "World Wise";
       features = [
@@ -31,6 +37,9 @@ export function useProject(name) {
       break;
 
     case "travelist":
+      git = "https://github.com/Arjunliljo/travel-list.git";
+      live = "https://travel-list-xi-woad.vercel.app/";
+      thumbnail = "./img/travelList.webp";
       shortDesc = "packing List";
       projectName = "Travel List";
       features = [
@@ -40,9 +49,15 @@ export function useProject(name) {
         "Mark as Packed",
         "retro ui",
       ];
+      desciption =
+        "TravelList, is a single-page application (SPA) built with React that helps users organize their travel packing efficiently. Users can add items to their packing list and mark them as packed once they're ready. The app allows sorting items based on the time they were added, by name, or by the number of items, offering flexibility in how users manage their list. The design features a retro feel, providing a unique and nostalgic user experience. The responsive design ensures the app works seamlessly on any device, making it easy for users to keep track of their packing list on the go. This project demonstrates my skills in creating functional and user-friendly applications with React, focusing on effective state management and intuitive user interfaces. TravelList simplifies the packing process, ensuring users are well-prepared for their travels.";
+
       break;
 
     case "popcorn":
+      thumbnail = "./img/PopCornThumbnail.webp";
+      live = "https://popcorn-jade.vercel.app/";
+      git = "https://github.com/Arjunliljo/popcorn.git";
       shortDesc = "Find your movie";
       projectName = "PopCorn";
       features = [
@@ -52,9 +67,15 @@ export function useProject(name) {
         "imdb review",
         "simple ui",
       ];
+      desciption =
+        "Popcorn, is a highly reactive movie search application built with React, integrated with the OMDB API. The app features an intuitive and responsive UI, providing instant search results as users type in the search bar, thanks to the use of AbortController for optimized API calls. Users can add movies to a watchlist and track watched movies, complete with detailed information about each film. The summary section shows the total number of movies, overall watch time, and allows users to set ratings for watched movies. Popcorn offers a seamless and engaging user experience for movie enthusiasts, showcasing my proficiency in React and API integration.";
+
       break;
 
     case "traveller":
+      git = "https://github.com/Arjunliljo/Traveller.git";
+      live = "https://traveller-olive.vercel.app/";
+      thumbnail = "./img/travellerImg.png";
       shortDesc = "For The Travellers";
       projectName = "Traveller";
       features = [
@@ -69,6 +90,9 @@ export function useProject(name) {
       break;
 
     case "mapty":
+      git = "https://github.com/Arjunliljo/Mark.git";
+      live = "https://arjunliljo.github.io/Mark/";
+      thumbnail = "./img/maptyMapImg.png";
       shortDesc = "The Live Map";
       projectName = "The Mark";
       features = [
@@ -82,6 +106,9 @@ export function useProject(name) {
         "This project exemplifies adeptness in object-oriented design, integrating mapping libraries, leveraging browser storage, ensuring responsiveness, and fostering interactivity. Through meticulous class organization and inheritance, it delivers a scalable and maintainable codebase. Integration with mapping libraries like Leaflet enriches user experience, allowing for interactive visualization of workout data. Utilization of browser localStorage ensures seamless data persistence across sessions, enhancing user convenience. The interface is designed to be responsive, adapting gracefully to various devices and screen sizes. Robust event handling mechanisms facilitate smooth user interactions, from form submissions to map interactions, providing a seamless and intuitive user experience. Overall, this project showcases a comprehensive skill set and attention to detail, making it a compelling asset for any software development role.";
       break;
     case "pigGame":
+      thumbnail = "./img/PigGame.webp";
+      live = "https://arjunliljo.github.io/PigGame/";
+      git = "https://github.com/Arjunliljo/PigGame.git";
       shortDesc = "Fun Ludo Game";
       projectName = "Pig Game";
       features = [
@@ -93,7 +120,19 @@ export function useProject(name) {
       ];
       desciption =
         "The Pig Game is a simple yet engaging JavaScript-based web application. It offers an interactive experience where players roll dice, accumulating points while strategizing to avoid risks of losing their turn. The game employs dynamic DOM manipulation to update scores and display dice rolls instantly, enhancing user engagement. Utilizing JavaScript's event-driven architecture, it ensures smooth gameplay and responsive feedback to player actions. With a minimalist design and efficient code structure, the Pig Game delivers an immersive gaming experience across various devices. Its lightweight nature and seamless functionality make it an ideal choice for casual gamers and enthusiasts alike, highlighting the versatility and creativity achievable through JavaScript development";
+      break;
+
+    // default:
+    //   throw new Error("undefined project");
   }
 
-  return { shortDesc, title, desciption, features, thumbnail, projectName };
+  return {
+    shortDesc,
+    desciption,
+    features,
+    thumbnail,
+    projectName,
+    live,
+    git,
+  };
 }
