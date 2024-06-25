@@ -41,7 +41,7 @@ export function useProject(name) {
       live = "https://travel-list-xi-woad.vercel.app/";
       thumbnail = "./img/travelList.webp";
       shortDesc = "packing List";
-      projectName = "Travel List";
+      projectName = "Far Away";
       features = [
         "Add Packing items",
         "Make a List",
