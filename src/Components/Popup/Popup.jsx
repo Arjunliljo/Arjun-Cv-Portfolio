@@ -15,11 +15,7 @@ function Popup() {
     >
       <div className="popup__content">
         <div className="popup__left">
-          <img
-            src={thumbnail}
-            alt={`${projectName} thumbnail`}
-            className="popup__img"
-          />
+          <img src={thumbnail} alt={`thumbnail`} className="popup__img" />
         </div>
         <div className="popup__right">
           <a
@@ -37,7 +33,7 @@ function Popup() {
               href={live}
               target="_blank"
               className="btn btn-blue project-live"
-              aria-label={`Visit ${projectName} live site`}
+              aria-label={`Visit live site`}
             >
               Visit →
             </a>
@@ -46,7 +42,7 @@ function Popup() {
               target="_blank"
               className="btn btn-blue project-github"
               style={{ marginLeft: ".8rem" }}
-              aria-label={`View ${projectName} repository`}
+              aria-label={`View repository`}
             >
               Repository →
             </a>
