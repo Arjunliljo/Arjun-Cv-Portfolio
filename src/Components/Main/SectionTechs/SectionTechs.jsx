@@ -60,16 +60,6 @@ function SectionTechs() {
           <TechContent tech="js" />
           <TechContent tech="java" />
         </div>
-
-        <div className="tech__box">
-          <TechContent tech="js" />
-          <TechContent tech="java" />
-        </div>
-
-        <div className="tech__box">
-          <TechContent tech="js" />
-          <TechContent tech="java" />
-        </div>
       </Slider>
 
       {(isMobile || isTab) && (

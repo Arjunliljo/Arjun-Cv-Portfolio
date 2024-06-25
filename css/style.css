@@ -1022,7 +1022,7 @@ body {
   margin-top: -19rem;
   padding: 8rem 2rem;
   padding-bottom: 20rem;
-  background-image: linear-gradient(to right bottom, rgba(3, 6, 55, 0.8), rgba(0, 0, 0, 0.8)), url("../img/section-tours-background-2.png");
+  background-image: linear-gradient(to right bottom, rgba(3, 6, 55, 0.8), rgba(0, 0, 0, 0.8)), url("../img/section-project-background.webp");
   background-size: cover;
   clip-path: polygon(0 13%, 100% 0%, 100% 85%, 0 100%);
 }
@@ -1708,7 +1708,7 @@ body {
 }
 .popup__content {
   width: 70%;
-  background-color: #fbfcc5;
+  background-color: #fff;
   box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.2);
   border-radius: 3px;
   display: flex;
@@ -1727,8 +1727,9 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 1rem 0;
-  background-color: #fbfcc5;
+  padding: 2rem 0;
+  padding-left: 2rem;
+  background-color: #fff;
 }
 @media (max-width: 900px) {
   .popup__left {
