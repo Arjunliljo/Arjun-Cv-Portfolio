@@ -1,9 +1,10 @@
 import { useSelector } from "react-redux";
 import { useProject } from "../../Hooks/useProject";
+import { Link } from "react-router-dom";
 
 function Popup() {
   const name = useSelector((state) => state.project.popupProject);
-  const { desciption, projectName, thumbnail, live, git } = useProject(name);
+  const { description, projectName, thumbnail, live, git } = useProject(name);
 
   return (
     <aside
@@ -15,7 +16,11 @@ function Popup() {
     >
       <div className="popup__content">
         <div className="popup__left">
-          <img src={thumbnail} alt={`thumbnail`} className="popup__img" />
+          <img
+            src={thumbnail}
+            alt={`Thumbnail of ${projectName}`}
+            className="popup__img"
+          />
         </div>
         <div className="popup__right">
           <a
@@ -25,21 +30,25 @@ function Popup() {
           >
             ×
           </a>
-          <h2 className="heading-secondary">{projectName}</h2>
-          <h3 className="heading-thertiary">Overview</h3>
-          <p className="popup__text">{desciption}</p>
+          <h2 id="project-title" className="heading-secondary">
+            {projectName}
+          </h2>
+          <h3 className="heading-tertiary">Overview</h3>
+          <p id="project-description" className="popup__text">
+            {description}
+          </p>
           <div>
-            <a
-              href={live}
+            <Link
+              href={`${live}`}
               target="_blank"
               rel="noopener noreferrer"
               className="btn btn-blue project-live"
               aria-label={`Visit live site`}
             >
               Visit →
-            </a>
-            <a
-              href={git}
+            </Link>
+            <Link
+              href={`${git}`}
               target="_blank"
               rel="noopener noreferrer"
               className="btn btn-blue project-github"
@@ -47,7 +56,7 @@ function Popup() {
               aria-label={`View repository`}
             >
               Repository →
-            </a>
+            </Link>
           </div>
         </div>
       </div>

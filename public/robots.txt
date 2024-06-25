@@ -1,0 +1,11 @@
+User-agent: *
+Disallow: /private-directory/
+Allow: /public-directory/
+
+# Example of blocking all crawlers from the entire site
+# Disallow: /
+
+# Example of allowing all crawlers to access all content
+# Allow: /
+
+Sitemap: https://arjun-cv-web-developer.vercel.app/

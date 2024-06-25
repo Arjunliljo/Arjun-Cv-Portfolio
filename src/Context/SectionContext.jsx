@@ -1,10 +1,17 @@
 import { createContext } from "preact";
-import { useContext, useEffect, useState, useCallback } from "preact/hooks";
+import {
+  useContext,
+  useEffect,
+  useState,
+  useCallback,
+  useRef,
+} from "preact/hooks";
 
 const SectionContext = createContext();
 
 function SectionProvider({ children }) {
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 600);
+  const contactEl = useRef(null);
 
   const [isTab, setIsTab] = useState(
     window.innerWidth > 600 && window.innerWidth <= 1400
@@ -28,6 +35,7 @@ function SectionProvider({ children }) {
       value={{
         isMobile,
         isTab,
+        contactEl,
       }}
     >
       {children}

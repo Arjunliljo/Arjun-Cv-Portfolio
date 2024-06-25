@@ -6,7 +6,7 @@ import { useObserver } from "../../../Hooks/useObeserver";
 import { useSection } from "../../../Context/SectionContext";
 
 function SectionContact() {
-  const contactSection = useRef(null);
+  const { contactEl } = useSection();
   const isContact = useSelector((state) => state.contact.isContact);
   const { isMobile } = useSection();
   const [callback] = useObserver(setIsContact, true, false);
@@ -21,19 +21,19 @@ function SectionContact() {
   });
 
   useEffect(() => {
-    if (contactSection.current) {
-      contactObserver.observe(contactSection.current);
+    if (contactEl.current) {
+      contactObserver.observe(contactEl.current);
     }
 
     return () => {
-      if (contactSection.current) {
-        contactObserver.unobserve(contactSection.current);
+      if (contactEl.current) {
+        contactObserver.unobserve(contactEl.current);
       }
     };
   }, [contactObserver]);
 
   return (
-    <section ref={contactSection} className="section-book" id="sectionContact">
+    <section ref={contactEl} className="section-book" id="sectionContact">
       <div
         className="book"
         style={
