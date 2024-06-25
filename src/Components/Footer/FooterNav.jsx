@@ -23,7 +23,7 @@ function FooterNav() {
           </a>
         </li>
         <li className="footer-item terms">
-          <a href="#" className="footer__link">
+          <a href="/" className="footer__link">
             Terms and Conditions
           </a>
         </li>

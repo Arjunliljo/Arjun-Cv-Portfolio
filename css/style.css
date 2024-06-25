@@ -326,6 +326,7 @@ section {
   visibility: hidden;
 }
 .navigation__list {
+  cursor: pointer;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -343,9 +344,9 @@ section {
     margin-bottom: 5rem;
   }
 }
-.navigation__link:link, .navigation__link:visited {
+.navigation__link {
   display: inline-block;
-  font-family: "Roboto", "Nato";
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
   letter-spacing: 2px;
   font-size: 3rem;
   font-weight: 600;
@@ -358,14 +359,25 @@ section {
   transition: all 0.5s;
 }
 @media (max-width: 900px) {
-  .navigation__link:link, .navigation__link:visited {
+  .navigation__link {
     font-size: 5rem;
+  }
+}
+@media (max-width: 900px) {
+  .navigation__link {
+    font-size: 4rem;
+    font-weight: 500;
   }
 }
 .navigation__link:hover, .navigation__link:active {
   background-position: 100%;
   color: #470034;
   transform: translateX(1rem);
+}
+@media (max-width: 900px) {
+  .navigation__link:hover, .navigation__link:active {
+    transform: translateX(2rem);
+  }
 }
 .navigation__checkbox:checked ~ .navigation__nav {
   visibility: visible;

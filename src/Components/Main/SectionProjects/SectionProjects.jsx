@@ -39,7 +39,7 @@ function SectionProjects() {
     <section
       ref={projectSection}
       className="section-projects"
-      id="section-projects"
+      id="sectionProjects"
       aria-labelledby="projects"
     >
       <Headings
