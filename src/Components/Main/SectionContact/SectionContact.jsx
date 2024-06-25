@@ -32,8 +32,6 @@ function SectionContact() {
     };
   }, [contactObserver]);
 
-  console.log(isContact);
-
   return (
     <section ref={contactSection} className="section-book" id="sectionContact">
       <div

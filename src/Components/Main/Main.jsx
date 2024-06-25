@@ -1,4 +1,5 @@
 import React, { Suspense, lazy } from "react";
+import Popup from "../Popup/Popup";
 
 const LazySectionAbout = lazy(() => import("./SectionAbout/SectionAbout"));
 const LazySectionCards = lazy(() => import("./SectionCards/SectionCards"));
@@ -19,6 +20,7 @@ function Main() {
         <LazySectionProjects />
         <LazySectionTechs />
         <LazySectionContact />
+        <Popup />
       </Suspense>
     </main>
   );

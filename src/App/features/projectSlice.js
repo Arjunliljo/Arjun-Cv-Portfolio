@@ -2,6 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   isProject: false,
+  popupProject: "",
 };
 
 export const eventSlice = createSlice({
@@ -12,9 +13,12 @@ export const eventSlice = createSlice({
     setIsProject: (state, action) => {
       state.isProject = action.payload;
     },
+    setPopupProject: (state, action) => {
+      state.popupProject = action.payload;
+    },
   },
 });
 
-export const { setIsProject } = eventSlice.actions;
+export const { setIsProject, setPopupProject } = eventSlice.actions;
 
 export default eventSlice.reducer;
