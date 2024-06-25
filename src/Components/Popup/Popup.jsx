@@ -6,13 +6,27 @@ function Popup() {
   const { desciption, projectName, thumbnail, live, git } = useProject(name);
 
   return (
-    <div className="popup" id="popup">
+    <aside
+      className="popup"
+      id="popup"
+      role="dialog"
+      aria-labelledby="project-title"
+      aria-describedby="project-description"
+    >
       <div className="popup__content">
         <div className="popup__left">
-          <img src={thumbnail} alt="project thumbnail" className="popup__img" />
+          <img
+            src={thumbnail}
+            alt={`${projectName} thumbnail`}
+            className="popup__img"
+          />
         </div>
         <div className="popup__right">
-          <a href="#section-tours" className="popup__close">
+          <a
+            href="#section-tours"
+            className="popup__close"
+            aria-label="Close popup"
+          >
             ×
           </a>
           <h2 className="heading-secondary">{projectName}</h2>
@@ -23,6 +37,7 @@ function Popup() {
               href={live}
               target="_blank"
               className="btn btn-blue project-live"
+              aria-label={`Visit ${projectName} live site`}
             >
               Visit →
             </a>
@@ -31,13 +46,14 @@ function Popup() {
               target="_blank"
               className="btn btn-blue project-github"
               style={{ marginLeft: ".8rem" }}
+              aria-label={`View ${projectName} repository`}
             >
               Repository →
             </a>
           </div>
         </div>
       </div>
-    </div>
+    </aside>
   );
 }
 
