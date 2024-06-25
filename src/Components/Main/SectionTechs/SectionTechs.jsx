@@ -20,7 +20,7 @@ function SectionTechs() {
     return new IntersectionObserver(callBack, {
       root: null,
       threshold: 0,
-      rootMargin: "200px",
+      rootMargin: "300px",
     });
   });
   useEffect(() => {
