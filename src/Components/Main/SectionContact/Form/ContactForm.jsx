@@ -1,6 +1,17 @@
+import { useState } from "preact/hooks";
 import RadioButtons from "./RadioButtons";
 
 function ContactForm() {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [isHire, setIsHire] = useState(false);
+  const [text, setText] = useState("");
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const data = { name, email, isHire, text };
+  };
+
   return (
     <form action="" className="form" aria-labelledby="contact-heading">
       <h2
@@ -13,6 +24,8 @@ function ContactForm() {
 
       <div className="form__group">
         <input
+          value={name}
+          onChange={(e) => setName(e.target.value)}
           type="text"
           className="form__input"
           id="name"
@@ -28,6 +41,8 @@ function ContactForm() {
 
       <div className="form__group">
         <input
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
           type="email"
           className="form__input"
           id="email"
@@ -43,6 +58,8 @@ function ContactForm() {
 
       <div className="form__group">
         <textarea
+          value={text}
+          onChange={(e) => setText(e.target.value)}
           name="message"
           id="message"
           className="form__textArea"
@@ -52,11 +69,15 @@ function ContactForm() {
       </div>
 
       <div className="from__group">
-        <RadioButtons />
+        <RadioButtons onHire={setIsHire} />
       </div>
 
       <div className="form__group share-thought-btn" id="form_button">
-        <button type="submit" className="form-btn btn btn-blue">
+        <button
+          type="submit"
+          className="form-btn btn btn-blue"
+          onClick={handleSubmit}
+        >
           Send →
         </button>
       </div>

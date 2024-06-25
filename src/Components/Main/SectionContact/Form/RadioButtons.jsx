@@ -1,11 +1,11 @@
-function RadioButtons() {
+function RadioButtons({ onHire }) {
   return (
     <fieldset
       className="form__fieldset"
       style={{ border: "none", marginBottom: "3rem" }}
     >
       <legend className="form__legend"></legend>
-      <div className="form__radio-group">
+      <div className="form__radio-group" onClick={() => onHire(true)}>
         <input
           type="radio"
           name="reason"
@@ -18,7 +18,7 @@ function RadioButtons() {
           Hire
         </label>
       </div>
-      <div className="form__radio-group">
+      <div className="form__radio-group" onClick={() => onHire(false)}>
         <input
           type="radio"
           name="reason"
