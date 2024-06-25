@@ -26,7 +26,7 @@ function TechsBg() {
 
   return (
     <div className="bg__video" title="Background video of technology">
-      {!isLoaded && (
+      {(!isLoaded || isMobile) && (
         <div className="bg__video-placeholder">
           <img src="./img/section-project-background.webp" alt="Loading..." />
         </div>
@@ -39,7 +39,7 @@ function TechsBg() {
         loop={!isMobile}
         playsInline
         aria-label="Background video of technology"
-        style={{ display: isLoaded ? "block" : "none" }}
+        style={{ display: isLoaded && !isMobile ? "block" : "none" }}
       >
         <source src="./img/video3.mp4" type="video/mp4" />
         <source src="./img/video.webm" type="video/webm" />
