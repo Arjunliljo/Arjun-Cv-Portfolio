@@ -1,15 +1,21 @@
 import React from "react";
 
-function NavList() {
+function NavList({ onChecked }) {
   return (
     <nav aria-label="Main Navigation">
       <ul className="navigation__list">
-        <li className="navigation__item navHome">
+        <li
+          className="navigation__item navHome"
+          onClick={() => onChecked(false)}
+        >
           <a href="/" className="navigation__link" aria-label="Home">
             Home
           </a>
         </li>
-        <li className="navigation__item navAbout">
+        <li
+          className="navigation__item navAbout"
+          onClick={() => onChecked(false)}
+        >
           <a
             href="#sectionAbout"
             className="navigation__link"
@@ -18,7 +24,10 @@ function NavList() {
             About
           </a>
         </li>
-        <li className="navigation__item navSkills">
+        <li
+          className="navigation__item navSkills"
+          onClick={() => onChecked(false)}
+        >
           <a
             href="#sectionProjects"
             className="navigation__link"
@@ -27,7 +36,10 @@ function NavList() {
             Projects
           </a>
         </li>
-        <li className="navigation__item navTechs">
+        <li
+          className="navigation__item navTechs"
+          onClick={() => onChecked(false)}
+        >
           <a
             href="#sectionTechs"
             className="navigation__link"
@@ -36,7 +48,10 @@ function NavList() {
             Techs
           </a>
         </li>
-        <li className="navigation__item navContact">
+        <li
+          className="navigation__item navContact"
+          onClick={() => onChecked(false)}
+        >
           <a
             href="#sectionContact"
             className="navigation__link"

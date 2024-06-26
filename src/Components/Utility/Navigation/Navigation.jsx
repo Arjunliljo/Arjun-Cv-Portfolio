@@ -29,9 +29,8 @@ function Navigation() {
         className="navigation__nav"
         id="navigationMenu"
         aria-label="Main navigation"
-        onClick={() => setIsChecked(false)}
       >
-        <NavList />
+        <NavList onChecked={setIsChecked} />
       </nav>
     </div>
   );
