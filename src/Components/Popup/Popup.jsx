@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 function Popup() {
   const name = useSelector((state) => state.project.popupProject);
   const { description, projectName, thumbnail, live, git } = useProject(name);
-
+  console.log(live);
   return (
     <aside
       className="popup"
@@ -39,7 +39,7 @@ function Popup() {
           </p>
           <div>
             <Link
-              href={`${live}`}
+              to={`${live}`}
               target="_blank"
               rel="noopener noreferrer"
               className="btn btn-blue project-live"
@@ -48,7 +48,7 @@ function Popup() {
               Visit →
             </Link>
             <Link
-              href={`${git}`}
+              to={`${git}`}
               target="_blank"
               rel="noopener noreferrer"
               className="btn btn-blue project-github"
