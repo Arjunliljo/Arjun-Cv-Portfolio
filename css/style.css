@@ -473,6 +473,7 @@ section {
     width: 6rem;
     height: 6rem;
     position: static;
+    margin-top: 2.5rem;
   }
 }
 .header__social-icon-outside {
@@ -571,10 +572,8 @@ body {
   position: absolute;
   top: 30%;
   left: 50%;
-  bottom: 30%;
   text-align: center;
   transform: translateX(-50%);
-  /* to fix shaking while animation in sub contents */
   backface-visibility: hidden;
 }
 @media (max-width: 900px) {
