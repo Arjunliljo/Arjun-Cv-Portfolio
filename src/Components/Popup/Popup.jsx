@@ -5,7 +5,6 @@ import { Link } from "react-router-dom";
 function Popup() {
   const name = useSelector((state) => state.project.popupProject);
   const { description, projectName, thumbnail, live, git } = useProject(name);
-  console.log(live);
   return (
     <aside
       className="popup"
