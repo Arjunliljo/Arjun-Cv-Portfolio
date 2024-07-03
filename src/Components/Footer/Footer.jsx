@@ -1,4 +1,3 @@
-import Loader from "../Utility/Spinner/Loader";
 import CopyRight from "./CopyRight";
 import FooterLogo from "./FooterLogo";
 import FooterNav from "./FooterNav";

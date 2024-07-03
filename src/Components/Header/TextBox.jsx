@@ -12,8 +12,6 @@ function TextBox() {
   const [isAnim, setIsAnim] = useState(false);
   const [elementWidth, setElementWidth] = useState(0);
 
-  //   const [isSwitch, setIsSwitch] = useState(false);
-
   const elementRef = useRef(null);
   const resizeObserver = useRef(null);
 

@@ -1,4 +1,4 @@
-import { useRef, useEffect, useMemo, useState } from "preact/hooks";
+import { useRef, useEffect, useMemo } from "preact/hooks";
 import { useSection } from "../../../Context/SectionContext";
 import SecondaryBtn from "../../Utility/Buttons/SecondaryBtn";
 import Headings from "../../Utility/Headings";

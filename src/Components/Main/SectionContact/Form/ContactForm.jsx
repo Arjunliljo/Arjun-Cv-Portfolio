@@ -1,10 +1,8 @@
-import { useEffect, useState } from "preact/hooks";
+import { useState } from "preact/hooks";
 import RadioButtons from "./RadioButtons";
 import axios from "axios";
-import Spinner from "../../../Utility/Spinner/Spinner";
 import Loader from "../../../Utility/Spinner/Loader";
 import ContactPopup from "../../../Popup/ContactPopup";
-import styles from "./ContactForm.module.css";
 
 const URL = import.meta.env.VITE_URL;
 

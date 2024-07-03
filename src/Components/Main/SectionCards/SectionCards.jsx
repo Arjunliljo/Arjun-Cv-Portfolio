@@ -9,8 +9,6 @@ import { useObserver } from "../../../Hooks/useObeserver";
 import { useSelector } from "react-redux";
 import { setIsFeature } from "../../../App/features/featureSlice";
 
-const img = new Image();
-
 function SectionCards() {
   const [imageLoaded, setImageLoaded] = useState(false);
   const [imgSrc, setImgSrc] = useState(null);
