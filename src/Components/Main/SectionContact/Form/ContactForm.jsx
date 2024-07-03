@@ -29,7 +29,7 @@ function ContactForm() {
     const data = { name, email, isHire, message };
     setIsLoading(true);
     try {
-      await axios.post(`${URL}/send-edmail`, data);
+      await axios.post(`${URL}/send-email`, data);
       setIsMailed(true);
       reset();
     } catch (err) {
