@@ -24,6 +24,9 @@ function ContactForm() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    if (!name || !email || !message) return;
+
     const data = { name, email, isHire, message };
     setIsLoading(true);
     try {
@@ -69,7 +72,7 @@ function ContactForm() {
             className="form__input"
             id="name"
             name="name"
-            required
+            required={true}
             placeholder="Full name"
             aria-required="true"
           />
@@ -86,7 +89,7 @@ function ContactForm() {
             className="form__input"
             id="email"
             name="email"
-            required
+            required={true}
             placeholder="Email"
             aria-required="true"
           />
@@ -104,6 +107,7 @@ function ContactForm() {
             className="form__textArea"
             placeholder="Write Message"
             aria-required="true"
+            required={true}
           ></textarea>
         </div>
 
