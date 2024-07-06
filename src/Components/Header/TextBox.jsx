@@ -72,9 +72,9 @@ function TextBox() {
       </h1>
       <a
         style={{ marginTop: "4rem" }}
-        href="./files/Arjun-Cv-Resume.pdf"
+        href="./files/Arjun-Cv.pdf"
         className="btn btn-white btn--animated discover"
-        download="Arjun-Cv-Resume.pdf"
+        download="Arjun-Cv.pdf"
         target="_blank"
         rel="noopener noreferrer"
         aria-label="Download Arjun Cv's Resume"
