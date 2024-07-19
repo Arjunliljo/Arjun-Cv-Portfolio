@@ -1,0 +1,370 @@
+.section-projects {
+  background-color: $color-gray-light-1;
+
+  //adjustments
+  margin-top: -19rem;
+  padding: 8rem 2rem;
+  padding-bottom: 20rem;
+
+  background-image: linear-gradient(
+      to right bottom,
+      rgba($color-dark, 0.8),
+      rgba($color-black, 0.8)
+    ),
+    url("../img/section-project-background.webp");
+
+  background-size: cover;
+  clip-path: polygon(0 13%, 100% 0%, 100% 85%, 0 100%);
+
+  @include respond(tabLand) {
+    margin-top: -35rem;
+    padding-top: 15rem;
+  }
+
+  @include respond(phone) {
+    clip-path: none;
+    margin-top: 0rem;
+  }
+}
+
+.card {
+  //FUNCTIONALITY
+  // new property that allows to change the prespective of the rotation and this has to be in the parant element the transform
+  perspective: 150rem;
+  // to make work on mozilla firefox
+  -moz-perspective: 150rem;
+  position: relative;
+  cursor: pointer;
+  height: 45rem;
+
+  @include respond(phone) {
+    height: 4rem;
+  }
+
+  &__side {
+    height: 45rem;
+
+    text-align: center;
+    text-transform: uppercase;
+    border-radius: 5px;
+    cursor: pointer;
+    overflow: hidden;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+
+    box-shadow: 0rem 1.5rem 4rem rgba($color-black, 0.15);
+
+    transition: transform 1s ease;
+
+    &--front {
+      background-color: $color-darker;
+    }
+    &--back {
+      transform: rotateY(180deg);
+      margin: 0 auto;
+      &-1 {
+        background-image: linear-gradient(
+          to right bottom,
+          $color-secondary-light,
+          $color-secondary-dark
+        );
+      }
+      &-2 {
+        background-image: linear-gradient(
+          to right bottom,
+          $color-green-light,
+          $color-green-dark
+        );
+      }
+      &-3 {
+        background-image: linear-gradient(
+          to right bottom,
+          $color-primery-light,
+          $color-primery-dark
+        );
+      }
+      &-4 {
+        background-image: linear-gradient(to right bottom, #af24eb, #280238);
+      }
+      &-5 {
+        background-image: linear-gradient(to right bottom, brown, #000000);
+      }
+      &-6 {
+        background-image: linear-gradient(to right bottom, #28b485, #012b12);
+      }
+      &-7 {
+        background-image: linear-gradient(to right bottom, #0c014d, #250335);
+      }
+    }
+  }
+
+  &--text {
+    text-transform: none;
+  }
+
+  &:hover &__side {
+    &--front {
+      transform: rotateY(-180deg);
+    }
+
+    &--back {
+      transform: rotateY(0deg);
+    }
+  }
+
+  // FRONT SIDE STYLING
+  &__picture {
+    background-size: cover;
+    height: 20rem;
+    background-blend-mode: multiply;
+
+    // to make work in all browser
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+
+    &--1 {
+      background-image: linear-gradient(
+          to right bottom,
+          $color-secondary-light,
+          $color-secondary-dark
+        ),
+        url(../img/traveller-image.jpg);
+    }
+    &--2 {
+      background-image: linear-gradient(
+          to right bottom,
+          $color-tertiary-light,
+          $color-tertiary-dark
+        ),
+        url("../img/map.avif");
+    }
+    &--3 {
+      background-image: linear-gradient(
+          to right bottom,
+          $color-primery-light,
+          $color-primery-dark
+        ),
+        url(../img/The-Pig-game.jpg);
+    }
+    &--4 {
+      background-image: linear-gradient(
+          to right bottom,
+          $color-radial-lighter,
+          #a716e0
+        ),
+        url(../img/movieBg.jpg);
+    }
+    &--5 {
+      background-image: linear-gradient(to right bottom, black, #bd6327),
+        url(../img/travelBg.jpg);
+    }
+    &--6 {
+      background-image: linear-gradient(
+          to right bottom,
+          #baffb8,
+          rgb(6, 59, 17)
+        ),
+        url(../img/worldWiseBg.jpg);
+    }
+    &--7 {
+      background-image: linear-gradient(
+          to right bottom,
+          #2516ff,
+          rgb(23, 2, 80)
+        ),
+        url(../img/reactBg.jpg);
+    }
+  }
+  &__heading {
+    text-align: right;
+    text-transform: uppercase;
+    color: $color-white;
+    font-size: 2.6rem;
+    font-weight: 300;
+    position: absolute;
+    top: 12rem;
+    right: 1rem;
+    width: 60%;
+
+    @include respond(tabPort) {
+      font-size: 4rem;
+    }
+  }
+  &__heading--span {
+    padding: 1rem;
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
+
+    &-1 {
+      background-image: linear-gradient(
+        to right,
+        rgba($color-secondary-light, 0.8),
+        rgba($color-secondary-dark, 0.8)
+      );
+    }
+    &-2 {
+      background-image: linear-gradient(
+        to right,
+        rgba($color-tertiary-light, 0.8),
+        rgba($color-tertiary-dark, 0.8)
+      );
+    }
+    &-3 {
+      background-image: linear-gradient(
+        to right,
+        rgba($color-primery-light, 0.8),
+        rgba($color-primery-dark, 0.8)
+      );
+    }
+    &-4 {
+      background-image: linear-gradient(
+        to right,
+        rgba($color-radial-light, 0.8),
+        rgba($color-radial-dark, 0.8)
+      );
+    }
+    &-5 {
+      background-image: linear-gradient(
+        to right,
+        rgba(brown, 0.8),
+        rgba(rgb(95, 38, 5), 0.8)
+      );
+    }
+    &-6 {
+      background-image: linear-gradient(
+        to right,
+        rgba(rgb(60, 150, 90), 0.8),
+        rgba(rgb(0, 87, 58), 0.8)
+      );
+    }
+    &-7 {
+      background-image: linear-gradient(
+        to right,
+        rgba(rgb(28, 0, 73), 0.8),
+        rgba(rgb(4, 43, 216), 0.8)
+      );
+    }
+  }
+  &__details {
+    width: 80%;
+    margin: 0 auto;
+    font-size: 1.2rem;
+    padding: 3rem;
+    @include respond(tabPort) {
+      font-size: 2.5rem;
+    }
+    ul {
+      text-decoration: none;
+      list-style: none;
+      font-weight: 700;
+
+      li {
+        padding: 0.9rem;
+        @include respond(tab-port) {
+          margin-top: 10rem;
+          font-size: 1rem;
+        }
+        &:not(:last-child) {
+          border-bottom: 1px solid #eee;
+        }
+      }
+    }
+  }
+
+  // BACK SIDE
+  &__cta {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    height: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  &__price-box {
+    text-align: center;
+    color: $color-white;
+  }
+  &__price-only {
+    font-size: 1.4rem;
+    font-weight: 300;
+    text-transform: uppercase;
+  }
+  &__price-value {
+    font-family: "Roboto";
+    font-weight: 300;
+    font-size: 4rem;
+    margin-bottom: 8rem;
+  }
+
+  @media only screen and (max-width: 56.25em), only screen and (hover: none) {
+    height: auto;
+    border-radius: 3px;
+    background-color: transparent;
+    box-shadow: 0 1.5rem 4rem rgba($color-black, 0.15);
+
+    &__side {
+      height: auto;
+      position: relative;
+      box-shadow: none;
+
+      &--back {
+        transform: rotateY(0);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        // clip-path: polygon(0 15%, 100% 0, 100% 100%, 0% 100%);
+
+        // @include respond(tabLand) {
+        //   height: 18rem;
+        // }
+        @include respond(tabPort) {
+          height: 18rem;
+        }
+      }
+
+      &--front {
+        transform: rotateY(0deg);
+      }
+    }
+
+    &:hover &__side--front {
+      transform: rotateY(0);
+    }
+
+    &__details {
+      padding: 3rem;
+      margin-top: 3rem;
+    }
+
+    // FRONT SIDE STYLING
+    &__cta {
+      position: relative;
+      top: -13rem;
+      left: 0;
+      transform: translate(0);
+      width: 100%;
+    }
+
+    // &__price-box {
+    //     margin-bottom: 3rem;
+    // }
+    // &__price-only {
+    //     font-size: 3rem;
+    // }
+
+    // &__price-value {
+    //     font-size: 8rem;
+    //     margin-bottom: 0px;
+    // }
+  }
+}

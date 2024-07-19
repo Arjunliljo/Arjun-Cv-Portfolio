@@ -1,0 +1,84 @@
+.section-about {
+  background-color: $color-darker;
+  transition: 1s all;
+
+  &__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    @include respond(tabPort) {
+      grid-template-columns: 1fr;
+      gap: 7rem;
+      grid-template-rows: 80rem 40rem;
+    }
+  }
+
+  @include respond(tabPort) {
+    & .heading-thertiary:not(:first-child) {
+      margin-top: 8rem;
+    }
+  }
+}
+
+.composition {
+  position: relative;
+  transition: all 1s;
+  transform-origin: bottom;
+  @include respond(phone) {
+  }
+  @include respond(tabPort) {
+    padding-bottom: -15rem;
+  }
+
+  &__photo {
+    width: 55%;
+    box-shadow: 0rem 0.1rem 2rem rgba($color-black, 0.4);
+    cursor: pointer;
+    position: absolute;
+    transition: transform 0.2s, opacity 0.2s, outline 0.2s;
+    @include respond(tabPort) {
+      transition: transform 0.5s, opacity 0.5s, outline 0.5s;
+    }
+
+    z-index: 10;
+    outline-offset: 2rem;
+    outline: 1.5rem solid rgba(0, 0, 0, 0);
+    backface-visibility: hidden;
+
+    @include respond(tabPort) {
+      width: 50%;
+    }
+
+    &--p1 {
+      top: 5rem;
+      left: 0rem;
+      transition: transform 0.2s;
+      @include respond(tabPort) {
+        transform: translateX(5rem);
+      }
+    }
+    &--p2 {
+      top: 5rem;
+      right: 0rem;
+      transition: transform 0.2s;
+      @include respond(tabPort) {
+        transform: translateX(-5rem);
+      }
+    }
+    &--p3 {
+      top: 10rem;
+      left: 23%;
+      transition: transform 0.2s;
+    }
+    &:hover {
+      outline-color: $purple;
+      transform: scale(1.1) translateY(-0.5rem);
+      box-shadow: 0px 1.5rem 2.5rem rgba($color-black, 0.6);
+      z-index: 20;
+    }
+  }
+
+  &:hover &__photo:not(:hover) {
+    transform: scale(1);
+  }
+}

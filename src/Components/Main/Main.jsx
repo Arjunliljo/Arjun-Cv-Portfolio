@@ -1,6 +1,5 @@
 import React, { Suspense, lazy } from "react";
 import Popup from "../Popup/Popup";
-import ContactPopup from "../Popup/ContactPopup";
 
 const LazySectionAbout = lazy(() => import("./SectionAbout/SectionAbout"));
 const LazySectionCards = lazy(() => import("./SectionCards/SectionCards"));

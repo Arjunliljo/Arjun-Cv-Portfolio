@@ -16,6 +16,7 @@ function Slider({
 
   const numericGap = parseInt(gap);
   const numericChildWidth = parseInt(childWidth);
+
   // Calculate the total width of the container
   const itemWidth = numericChildWidth + numericGap;
   const shoWidth = numericChildWidth * items + numericGap * (items - 1);
@@ -24,9 +25,7 @@ function Slider({
 
   const [translate, setTranslate] = useState(0);
 
-  const style = {
-    gap: gap,
-  };
+
 
   useEffect(() => {
     if (!auto || isHover || pause) return;

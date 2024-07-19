@@ -1,0 +1,212 @@
+@keyframes main-img-anim {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  60% {
+    opacity: 0.6;
+    // visibility: visible;
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+@keyframes main-img-anim-phone {
+  0% {
+    opacity: 0;
+    // transform: translateY(-30px);
+  }
+
+  60% {
+    opacity: 0.6;
+    // visibility: visible;
+  }
+  100% {
+    opacity: 1;
+    // transform: translateY(0px) ;
+  }
+}
+
+@keyframes moveLeftoRight {
+  0% {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+
+  60% {
+    transform: translateX(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+@keyframes moveRightoLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(10rem);
+  }
+
+  60% {
+    transform: translateX(-2rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+@keyframes webDevAnim {
+  0% {
+    width: 100%;
+  }
+  50% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+@keyframes cursor-anim {
+  0% {
+    border-right: 6px solid $color-white;
+  }
+  50% {
+    border-right: 6px solid transparent;
+  }
+  100% {
+    border-right: 6px solid $color-white;
+    // border-right: 6px solid transparent;
+  }
+}
+
+@keyframes btnMoveUp {
+  0% {
+    transform: translateY(4rem);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
+@keyframes bulb {
+  0% {
+    color: $color-primery-dark;
+  }
+  50% {
+    color: $color-primery-light;
+  }
+}
+@keyframes bulb-2 {
+  0% {
+    fill: $color-primery-mid;
+    color: #777;
+  }
+  50% {
+    fill: $color-primery-light;
+    color: rgb(226, 226, 226);
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(30deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
+
+@property --a {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 0deg;
+}
+
+/* Define keyframes animation */
+@keyframes featureBoxAnim {
+  0% {
+    --a: 0deg;
+  }
+  100% {
+    --a: 360deg;
+  }
+}
+@keyframes social-anim {
+  0% {
+    opacity: 0;
+  }
+  70% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes social-anim-gitHub {
+  0% {
+    transform: translate(0rem, 0rem);
+  }
+  100% {
+    transform: translate(10rem, -10rem);
+  }
+}
+@keyframes social-anim-linkedIn {
+  0% {
+    transform: translate(0rem, 0rem);
+  }
+  100% {
+    transform: translate(14rem, -2rem);
+  }
+}
+@keyframes social-anim-instagram {
+  0% {
+    transform: translate(0rem, 0rem);
+  }
+  100% {
+    transform: translate(12.5rem, 7rem);
+  }
+}
+
+@keyframes contact-anim {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(40deg);
+  }
+}
+
+@keyframes git-anim-phone {
+  from {
+    transform: translateY(0rem);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(-10rem);
+    opacity: 1;
+  }
+}
+@keyframes linkedIn-anim-phone {
+  from {
+    transform: translateY(0rem);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(-10rem);
+    opacity: 1;
+  }
+}
+@keyframes insta-anim-phone {
+  from {
+    transform: translateY(0rem);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(-10rem);
+    opacity: 1;
+  }
+}

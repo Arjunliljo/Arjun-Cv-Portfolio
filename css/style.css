@@ -429,7 +429,6 @@ section {
 .header {
   height: 95vh;
   width: 100%;
-  background-image: linear-gradient(to right bottom, black, #2e0249);
   overflow: hidden;
   /* always try to fit inside the box entirely*/
   background-size: cover;

@@ -1,0 +1,146 @@
+.navigation {
+  z-index: 100000;
+  &__checkbox {
+    visibility: hidden;
+    display: none;
+    z-index: 10000;
+  }
+  &__btn {
+    cursor: pointer;
+    position: fixed;
+    height: 7rem;
+    width: 7rem;
+    top: 6rem;
+    left: 6rem;
+    background-color: $color-gray-light-1;
+    border-radius: 50%;
+    text-align: center;
+    z-index: 200;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 1rem 2rem rgba(black, 0.2);
+    z-index: 20000;
+  }
+  &__background {
+    background-image: radial-gradient($color-secondary-mid, $color-dark, black);
+    height: 6rem;
+    width: 6rem;
+    border-radius: 50%;
+    position: fixed;
+    top: 6.5rem;
+    left: 6.5rem;
+    z-index: 5000;
+    transition: transform 0.5s;
+  }
+
+  &__nav {
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 5000;
+    height: 100vh;
+    // we don't need to specify width because it is already 100% ie block element
+    width: 0;
+    opacity: 0;
+    transition: all 0.2s;
+    visibility: hidden;
+  }
+  &__list {
+    cursor: pointer;
+    @include centerPos;
+    font-weight: 900;
+    text-align: center;
+    list-style: none;
+  }
+  &__item {
+    margin: 1rem;
+    @include respond(tabPort) {
+      margin: 0;
+      margin-bottom: 5rem;
+    }
+  }
+  &__link {
+    @include respond(tabPort) {
+      font-size: 5rem;
+    }
+    display: inline-block;
+
+    font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+      "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+    letter-spacing: 2px;
+    font-size: 3rem;
+    font-weight: 600;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: white;
+    padding: 1rem;
+    background-image: linear-gradient(
+      120deg,
+      transparent 0%,
+      transparent 50%,
+      white 50%
+    );
+    background-size: 235%;
+    transition: all 0.5s;
+
+    @include respond(tabPort) {
+      font-size: 4rem;
+      font-weight: 500;
+    }
+
+    &:hover,
+    &:active {
+      background-position: 100%;
+      color: $color-primery-dark;
+      transform: translateX(1rem);
+      @include respond(tabPort) {
+        transform: translateX(2rem);
+      }
+    }
+  }
+
+  //FUNCTIONALITY
+  &__checkbox:checked ~ &__nav {
+    visibility: visible;
+    width: 100%;
+    opacity: 1;
+  }
+  &__checkbox:checked ~ &__background {
+    transform: scale(60);
+  }
+  @include navigationIconCross;
+
+  // ICON
+  &__icon {
+    position: relative;
+    &,
+    &::after,
+    &::before {
+      display: inline-block;
+      background-color: rgb(59, 59, 59);
+      width: 3rem;
+      height: 2px;
+      transition: all 0.3s;
+    }
+
+    &::after,
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+    }
+    &::after {
+      top: 0.8rem;
+    }
+    &::before {
+      top: -0.8rem;
+    }
+  }
+  &__btn:hover &__icon::after {
+    transform: translateY(0.2rem);
+  }
+  &__btn:hover &__icon::before {
+    transform: translateY(-0.2rem);
+  }
+}

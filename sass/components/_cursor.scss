@@ -1,0 +1,15 @@
+.cursor{
+    height: 4rem;
+    width: 1rem;
+    margin-bottom: .3rem;
+    background-color: $color-gray-2;
+   
+    // align-content: stretch;
+    transition: opacity 1.2s;
+    animation: cursor-anim 1.2s ease-out 2s infinite;
+
+    @include respond(tab-port){
+        background-color: yellow;
+    }
+}
+

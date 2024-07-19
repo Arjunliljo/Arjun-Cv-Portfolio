@@ -1,0 +1,140 @@
+.header {
+  height: 95vh;
+  width: 100%;
+  overflow: hidden;
+  /* always try to fit inside the box entirely*/
+  background-size: cover;
+
+  //background-blend-mode: multiply;
+
+  /* top position of the image remains stable while bottom will be croped while adjustiing the screen size because of box-sizing  */
+  background-position: top;
+
+  /* in these x and y axis contained area shuould be visible in the header */
+  clip-path: polygon(0 0, 100% 0, 100% 80vh, 0 100%);
+
+  @include respond(tabPort) {
+    clip-path: none;
+    height: 100vh;
+  }
+
+  position: relative;
+
+  &__social {
+    @include respond(tabPort) {
+      width: 100%;
+      gap: 5rem;
+      display: flex;
+      margin-top: 65vh;
+      align-items: center;
+      justify-content: center;
+    }
+
+    &-icon {
+      position: absolute;
+      right: 28rem;
+      top: 25rem;
+      // z-index: 20000;
+      width: 4rem;
+      height: 4rem;
+      fill: gray;
+      color: gray;
+      cursor: pointer;
+      backface-visibility: hidden;
+
+      @include respond(tabPort) {
+        width: 6rem;
+        height: 6rem;
+        position: static;
+        margin-top: 2.5rem;
+      }
+
+      transition: transform 0.2s;
+
+      &-outside {
+        fill: currentColor !important;
+
+        &:hover {
+          fill: rgb(192, 192, 192) !important;
+        }
+      }
+      &-inside {
+        fill: rgb(0, 0, 0) !important;
+      }
+
+      &:hover {
+        fill: rgb(192, 192, 192) !important;
+      }
+    }
+  }
+
+  transition: all 1s;
+}
+
+.main-img {
+  width: 25rem;
+
+  position: absolute;
+  right: 17rem;
+  top: 15rem;
+  background-size: contain;
+  animation: main-img-anim 1.5s ease-in-out;
+
+  @include respond(tabLand) {
+    right: 50%;
+    transform: translateX(50%);
+    top: 10rem;
+    width: 35rem;
+    height: 35rem;
+    animation: main-img-anim-phone 1.5s ease-in-out;
+  }
+}
+
+.git-hub {
+  transform: translate(10rem, -10rem);
+  animation: social-anim $icon-anim-time ease-in,
+    social-anim-gitHub$icon-anim-time ease-in 0.5s;
+  z-index: 1000;
+  cursor: pointer;
+  &:hover {
+    transform: translate(10rem, -10rem);
+    fill: rgb(192, 192, 192);
+  }
+  @include respond(tabPort) {
+    transform: translate(0rem, 0rem);
+    animation: git-anim-phone 0.5s ease forwards;
+    z-index: 10;
+  }
+}
+.linked-in {
+  z-index: 1000;
+  transform: translate(14rem, -2rem);
+  animation: social-anim $icon-anim-time ease-in,
+    social-anim-linkedIn $icon-anim-time ease-in 0.5s;
+
+  &:hover {
+    transform: translate(14rem, -2rem);
+    fill: rgb(192, 192, 192);
+  }
+
+  @include respond(tabPort) {
+    transform: translate(0rem, 0rem);
+    animation: linkedIn-anim-phone 1s ease forwards;
+    z-index: 10;
+  }
+}
+.instagram {
+  z-index: 10;
+  transform: translate(12.5rem, 7rem);
+  animation: social-anim $icon-anim-time ease-in,
+    social-anim-instagram $icon-anim-time ease-in 0.5s forwards;
+  &:hover {
+    transform: translate(12.5rem, 7rem);
+    fill: rgb(192, 192, 192);
+  }
+  @include respond(tabPort) {
+    transform: translate(0rem, 0rem);
+    animation: insta-anim-phone 1.5s ease forwards;
+    z-index: 10;
+  }
+}

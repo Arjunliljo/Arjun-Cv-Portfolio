@@ -1,0 +1,88 @@
+.story{
+    margin: 0 auto;
+    width: 75%;
+    background-color:rgba( $color-black, .3);
+    box-shadow: 0px 3rem 6rem rgba($color-primery-light, 0.3);
+    padding: 6rem;
+    // because in shape we use transform and that is outside of the box so we increased padding left of the box so that we can contain all the contents in the box
+    padding-left: 9rem;
+    font-size: $default-font-size;
+    cursor: pointer;
+
+    @include respond(tabPort){
+        width: 85%;
+    }
+
+    @include respond(tabPort){
+        padding: 4rem;
+        padding-left: 6rem;
+        width: 100%;
+    }
+    
+    transform: skewX(-12deg);
+
+    @include respond(tabPort){
+        transform: skew(0deg);
+    }
+
+    & > *{
+        transform: skewX(12deg);
+        
+        @include respond(tabPort){
+            transform: skew(0deg);
+        }
+    }
+
+    &__shape{
+        height: 15rem;
+        width: 15rem;
+        float: left;
+        shape-outside: circle(50% at 50% 50%);
+        clip-path: circle(50% at 50% 50%);
+        transform: translateX(-3rem) skewX(12deg);
+        @include respond(tabPort){
+            transform: translateX(-3rem) skewX(0deg);
+        }
+        position: relative;
+    }
+    &__image{
+        height: inherit;
+        transform: scale(1);
+        transition: transform 1s;
+    }
+    &__caption{
+        text-transform: uppercase;
+        text-align: center;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, 20%);
+        color: white;
+        font-size: 1.7rem;
+        opacity: 0;
+        transition: transform 1s;
+        backface-visibility: hidden;
+    }
+
+    &:hover &__caption{
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
+
+    &:hover &__image{
+        transform: scale(1);
+        filter: blur(2px) brightness(80%);
+    }
+
+    @include respond(tabPort){
+        &__text h3{
+            font-size: 2.5rem;
+            text-wrap: pretty;
+        }
+        &__text p{
+            font-size: 2.5rem;
+            text-wrap:stable;
+            hyphens: auto;
+        }
+    }
+}

@@ -1,0 +1,86 @@
+.feature-box {
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  padding: 2.5rem;
+  border-radius: 2px;
+  box-shadow: 0px 1rem 2rem rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+  text-wrap: nowrap;
+  transition: transform 0.4s;
+  position: relative;
+  height: 39rem;
+  z-index: 100;
+
+  &::before {
+    content: "";
+    height: 98%;
+    width: 96%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translate(2%, 1%);
+    background-color: rgb(0, 0, 0);
+    color: black;
+    z-index: -1;
+  }
+
+  @include respond(tabPort) {
+    padding: 5rem;
+    height: auto;
+  }
+
+  @include respond(tabPort) {
+    font-size: 3rem;
+  }
+  &__icon {
+    height: 8rem;
+    padding-bottom: 0.5rem;
+    display: inline-block;
+    background: linear-gradient(
+      to right,
+      $color-primery-light,
+      $color-primery-dark
+    );
+    background-clip: text;
+    color: transparent;
+
+    animation: bulb-2 7s linear infinite both;
+
+    @include respond(tabPort) {
+      width: 12rem;
+      height: 12rem;
+    }
+  }
+  &__text {
+    text-align: center;
+    text-wrap: balance;
+    text-transform: none;
+    //color: $color-tertiary-mid;
+  }
+
+  &:hover {
+    transform: translateY(-1.5rem) scale(1.05);
+
+    // @include respond(tabPort){
+    //     transform: translateY(0rem) scale(1);
+    // }
+  }
+}
+
+.icon-anim {
+  fill: $color-primery-mid;
+  animation: bulb-2 7s linear infinite both;
+}
+
+.node,
+.react {
+  height: 7rem;
+  width: 7rem;
+  margin: 0.5rem 0;
+
+  @include respond(tabPort) {
+    height: 12rem;
+    width: 12rem;
+  }
+}

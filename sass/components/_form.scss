@@ -1,0 +1,157 @@
+.form {
+  &__group:not(:last-child) {
+    margin-bottom: 2rem;
+  }
+  position: relative;
+
+  &__textArea {
+    margin-bottom: 2rem;
+    height: 30rem;
+    font-size: 1.5rem;
+    padding: 1.5rem 2rem;
+    font-family: inherit;
+    color: inherit;
+    background-color: rgba($color-secondary-dark, 0.1);
+    border: none;
+    border-bottom: 3px solid transparent;
+    display: block;
+    width: 90%;
+    transition: all 0.3s;
+    position: absolute;
+    right: -125%;
+    top: 0%;
+
+    &:focus {
+      outline: none;
+    }
+
+    @include respond(tabPort) {
+      position: static;
+      width: 100%;
+      background-color: white;
+      font-size: 3rem;
+    }
+  }
+
+  &__input {
+    font-size: 1.5rem;
+    padding: 1.5rem 2rem;
+    font-family: inherit;
+    color: inherit;
+    background-color: rgba($color-white, 0.8);
+    border: none;
+    border-bottom: 3px solid transparent;
+    display: block;
+    width: 90%;
+    transition: all 0.3s;
+
+    @include respond(tabPort) {
+      font-size: 3rem;
+      width: 100%;
+    }
+
+    &:focus {
+      outline: none;
+      box-shadow: 0px 1rem 2rem rgba(black, 0.1);
+      border-bottom: 3px solid $color-tertiary-light;
+
+      &:invalid {
+        border-bottom: 3px solid $color-secondary-dark;
+      }
+    }
+    &::-webkit-input-placeholder {
+      color: $color-gray;
+    }
+  }
+
+  &__label {
+    margin-left: 2rem;
+    margin-top: 0.5rem;
+
+    display: block;
+    font-size: 1.2rem;
+    font-weight: 700;
+    transition: all 0.3s;
+
+    @include respond(tabPort) {
+      font-size: 1.8rem;
+      margin-bottom: 2rem;
+    }
+  }
+  &__input:placeholder-shown + &__label {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-3rem);
+  }
+
+  &__radio-group {
+    display: inline-block;
+    width: 30%;
+
+    @include respond(tabPort) {
+      width: 40%;
+    }
+  }
+  &__radio-label {
+    position: relative;
+    cursor: pointer;
+    font-size: $default-font-size;
+    padding-left: 4rem;
+    @include respond(tabPort) {
+      font-size: 3rem;
+    }
+  }
+  &__radio-button {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    border: 0.4rem solid $color-primery-light;
+    display: inline-block;
+    position: absolute;
+    top: -0.7rem;
+    left: 0;
+
+    @include respond(tabPort) {
+      top: -0.4rem;
+      height: 4rem;
+      width: 4rem;
+      left: -1rem;
+    }
+
+    &::after {
+      content: "";
+      display: block;
+      height: 1.3rem;
+      width: 1.3rem;
+      background-color: $color-primery-light;
+      border-radius: 50%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      opacity: 0;
+      transition: opacity 0.3s;
+
+      @include respond(tabPort) {
+        height: 2rem;
+        width: 2rem;
+      }
+    }
+  }
+  &__radio-input {
+    opacity: 0;
+  }
+  &__radio-input:checked + &__radio-label &__radio-button::after {
+    opacity: 1;
+  }
+}
+.book {
+  box-shadow: 0rem 2rem 4rem rgba($color-black, 0.3);
+}
+
+.share-thought-btn {
+  transform: translateX(160%);
+  @include respond(tabPort) {
+    transform: translateX(0%);
+  }
+}

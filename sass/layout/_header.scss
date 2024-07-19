@@ -1,0 +1,216 @@
+.header {
+  height: 90vh;
+  width: 100%;
+  background-image: linear-gradient(
+    to right bottom,
+    rgba($color-black, 1),
+    rgba($color-secondary-dark, 1)
+  );
+
+  /* always try to fit inside the box entirely*/
+  background-size: cover;
+
+  //background-blend-mode: multiply;
+
+  /* top position of the image remains stable while bottom will be croped while adjustiing the screen size because of box-sizing  */
+  background-position: top;
+
+  /* in these x and y axis contained area shuould be visible in the header */
+  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+
+  @include respond(phone) {
+    clip-path: none;
+  }
+
+  position: relative;
+
+  &__logo-box {
+    position: absolute;
+    top: 4rem;
+    left: 4rem;
+
+    @include respond(phone) {
+      top: 8rem;
+      left: 6rem;
+    }
+  }
+  &__logo {
+    height: 3.5rem;
+
+    @include respond(phone) {
+      height: 4rem;
+    }
+  }
+
+  &__social {
+    text-decoration: none;
+    list-style: none;
+
+    &-icon {
+      position: absolute;
+      right: 28rem;
+      top: 25rem;
+      // z-index: 200;
+      width: 4rem;
+      height: 4rem;
+      fill: gray;
+      color: gray;
+      cursor: pointer;
+      backface-visibility: hidden;
+
+      @include respond(tabPort) {
+        top: auto;
+        width: 6rem;
+        height: 6rem;
+        left: auto;
+        right: 35%;
+        bottom: 10rem;
+      }
+
+      transition: transform 0.2s;
+
+      &-outside {
+        fill: currentColor !important;
+
+        &:hover {
+          fill: rgb(192, 192, 192) !important;
+        }
+      }
+      &-inside {
+        fill: rgb(0, 0, 0) !important;
+      }
+
+      &:hover {
+        fill: rgb(192, 192, 192) !important;
+      }
+    }
+  }
+
+  &__contact-now {
+    position: absolute;
+    right: -9rem;
+    top: -3rem;
+    padding: 1rem 10rem;
+    transition: transform 0.5s;
+    transform: rotate(40deg);
+    background-color: $color-secondary-mid;
+    transform-origin: left;
+    opacity: 0;
+    animation: contact-anim 0.3s linear;
+    animation-delay: 3s;
+    cursor: pointer;
+    text-transform: uppercase;
+    color: $color-tertiary-light;
+    letter-spacing: 0.5rem;
+    font-size: 1.5rem;
+    font-weight: 700;
+    border: none;
+
+    @include respond(tabPort) {
+      transition: none;
+      padding: 0;
+      width: 100%;
+      bottom: 0px;
+      transition: none;
+      transform: rotate(0deg);
+      top: 75vh;
+      left: 0;
+      right: 0;
+      animation: none;
+      padding: 0;
+      // z-index: 1000;
+      font-size: 4rem;
+    }
+
+    &:hover {
+      background-color: rgba($color-secondary-mid, 0.8);
+    }
+  }
+}
+
+.main-img {
+  width: 30rem;
+  height: 30rem;
+  position: absolute;
+  right: 15rem;
+  top: 13rem;
+  background-size: contain;
+  animation: main-img-anim 1.5s ease-in-out;
+
+  @include respond(phone) {
+    right: 50%;
+    transform: translateX(50%);
+    top: 10rem;
+
+    animation: main-img-anim-phone 1.5s ease-in-out;
+  }
+}
+
+.git-hub {
+  transform: translate(10rem, -10rem);
+  animation: social-anim $icon-anim-time ease-in,
+    social-anim-gitHub$icon-anim-time ease-in 0.5s;
+  z-index: 1000;
+  cursor: pointer;
+  &:hover {
+    transform: translate(10rem, -10rem) scale(1.5);
+    fill: rgb(192, 192, 192);
+
+    @include respond(tabPort) {
+      transform: translate(-20rem, -25rem);
+    }
+  }
+  @include respond(tabPort) {
+    transform: translate(-20rem, -25rem);
+    animation: git-anim-phone 2s ease;
+    z-index: 10;
+  }
+}
+.linked-in {
+  // &-outside{
+  //     fill: rgb(255, 255, 255) !important;
+  // }
+  // &-inside{
+  //     fill: rgb(0, 0, 0) !important;
+  // }
+  z-index: 1000;
+  transform: translate(14rem, -2rem);
+  animation: social-anim $icon-anim-time ease-in,
+    social-anim-linkedIn $icon-anim-time ease-in 0.5s;
+
+  &:hover {
+    transform: translate(14rem, -2rem) scale(1.5);
+    fill: rgb(192, 192, 192);
+
+    @include respond(tabPort) {
+      transform: translate(-10rem, -25rem);
+      z-index: 10;
+    }
+  }
+
+  @include respond(tabPort) {
+    transform: translate(-10rem, -25rem);
+    animation: linkedIn-anim-phone 3s cubic-bezier(0.6, -0.02, 0.79, 0.5);
+    z-index: 10;
+  }
+}
+.instagram {
+  z-index: 1000;
+  transform: translate(12.5rem, 7rem);
+  animation: social-anim $icon-anim-time ease-in,
+    social-anim-instagram $icon-anim-time ease-in 0.5s;
+
+  &:hover {
+    transform: translate(12.5rem, 7rem) scale(1.5);
+    fill: rgb(192, 192, 192);
+
+    @include respond(tabPort) {
+      transform: translate(0rem, -25rem);
+    }
+  }
+  @include respond(tabPort) {
+    transform: translate(0rem, -25rem);
+    animation: insta-anim-phone 4s cubic-bezier(1, -0.01, 0.79, 0.5);
+    z-index: 10;
+  }
+}

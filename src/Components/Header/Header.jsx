@@ -8,6 +8,7 @@ import { useEffect, useMemo, useRef, useState } from "preact/hooks";
 import { useSection } from "../../Context/SectionContext";
 import { useObserver } from "../../Hooks/useObeserver";
 import { setIsHeader } from "../../App/features/headerSlice";
+import useMousePosition from "../../Hooks/useMousePosition";
 
 function Header({ children }) {
   const isHeader = useSelector((state) => state.header.isHeader);
@@ -39,30 +40,21 @@ function Header({ children }) {
     <header ref={headerElement}>
       {children}
 
-      <div
-        className="header"
-        style={
-          !isHeader
-            ? { backgroundImage: "linear-gradient( #141530, #141530)" }
-            : {}
-        }
-      >
-        {isHeader && (
-          <>
-            <div className="header__social">
-              <GitHubSvg />
-              <LinkedInSvg />
-              <InstaSvg />
-            </div>
-            <TextBox />
-            <img
-              src="./img/Arjun-Cv-mainWebp.webp"
-              className="main-img"
-              alt="Web developer Arjun Cv"
-            />
-            <ContactNowBtn>Contact Now</ContactNowBtn>
-          </>
-        )}
+      <div className="header">
+        <canvas id="canvas"></canvas>
+
+        <div className="header__social">
+          <GitHubSvg />
+          <LinkedInSvg />
+          <InstaSvg />
+        </div>
+        <TextBox />
+        <img
+          src="./img/Arjun-Cv-mainWebp.webp"
+          className="main-img"
+          alt="Web developer Arjun Cv"
+        />
+        <ContactNowBtn>Contact Now</ContactNowBtn>
       </div>
     </header>
   );

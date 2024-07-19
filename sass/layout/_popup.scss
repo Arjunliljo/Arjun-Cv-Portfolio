@@ -1,0 +1,142 @@
+.popup {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0%;
+  left: 0%;
+  background-color: rgba($color-black, 0.8);
+  z-index: 1000;
+  visibility: hidden;
+  opacity: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  @supports (-webkit-backdrop-filter: blur(10px)) or
+    (backdrop-filter: blur(10px)) {
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    background-color: rgba($color-black, 0.3);
+  }
+
+  transition: all 0.3s;
+
+  &__content {
+    width: 70%;
+    background-color: $color-white;
+    box-shadow: 0 2rem 4rem rgba($color-black, 0.2);
+    border-radius: 3px;
+    display: flex;
+    opacity: 0;
+    transform: scale(0.3);
+    transition: all 0.5s 0.2s;
+    @include respond(tabPort) {
+      width: 85%;
+    }
+  }
+
+  &__left {
+    width: 34%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 0;
+    padding-left: 2rem;
+    background-color: $color-white;
+
+    @include respond(tabPort) {
+      background-color: transparent;
+      width: 34%;
+      display: none;
+    }
+  }
+  &__right {
+    width: 66%;
+    display: table-cell;
+    vertical-align: middle;
+    padding: 5rem;
+    position: relative;
+    @include respond(tabPort) {
+      display: block;
+      width: 100%;
+      text-align: center;
+      padding: 4rem;
+      & .heading-secondary {
+        font-size: 4.5rem;
+        text-wrap: nowrap;
+        margin-bottom: 1rem;
+
+        @include respond(tabPort) {
+          font-size: 6rem;
+        }
+      }
+      & .heading-thertiary {
+        font-size: 2rem;
+        text-wrap: nowrap;
+
+        @include respond(tabPort) {
+          font-size: 3rem;
+        }
+      }
+      & p {
+        text-align: left;
+        font-size: 2rem;
+
+        @include respond(tabPort) {
+          font-size: 2.3rem;
+        }
+      }
+    }
+  }
+  &__img {
+    width: 90%;
+    height: 90%;
+    object-fit: fill;
+    transform: scale(1.1);
+    @include respond(tabPort) {
+      float: left;
+      width: 50%;
+    }
+  }
+  &__text {
+    font-size: 1.4rem;
+    margin-bottom: 4rem;
+    column-count: 2;
+    column-gap: 3rem;
+    column-rule: 1px solid #eee;
+
+    hyphens: auto;
+  }
+
+  //open state
+  &:target {
+    opacity: 1;
+    visibility: visible;
+  }
+  &:target &__content {
+    opacity: 1;
+    transform: scale(1);
+  }
+  &__close {
+    position: absolute;
+    top: 2rem;
+    right: 3rem;
+    font-size: 3rem;
+    text-decoration: none;
+    color: #777;
+
+    transition: all 0.3s;
+
+    @include respond(tabPort) {
+      z-index: 1000;
+      font-size: 5rem;
+      border-radius: 50%;
+    }
+
+    &:hover {
+      color: rgb(189, 0, 0);
+      transform: scale(1.5);
+    }
+  }
+}

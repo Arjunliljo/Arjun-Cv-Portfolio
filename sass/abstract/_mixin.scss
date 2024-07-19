@@ -1,0 +1,105 @@
+@mixin clearfix(){
+    &::after{
+        content: "";
+        display: table;
+        clear: both;
+    }
+}
+@mixin flex(){
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@mixin centerPos(){
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+@mixin scale($value){
+    transform: scale($value);
+}
+@mixin navigationStyle(){
+    &__background-2{
+        height: 6rem;
+        width: 6rem;
+        background-color: rgba(0, 0, 0, .6);
+        transform: scale(60);
+        z-index: 50;
+        position: fixed;
+        top: 0;
+        left: 0;
+        transform: scale(50);
+    }
+}
+
+@mixin navigationIconArrow{
+    &__checkbox:checked ~ &__btn &__icon::after{
+        transform: rotate(30deg) translateY(-1px);
+        width: 80%;
+    }
+    &__checkbox:checked ~ &__btn &__icon::before{
+        transform: rotate(-30deg) translateY(1px) ;
+        width: 80%;
+    }
+    &__checkbox:checked ~ &__btn &__icon{
+        transform:translateZ(5px) ;
+    }
+}
+
+@mixin navigationIconCross{
+    &__checkbox:checked ~ &__btn &__icon::after{
+        transform: rotate(45deg);
+        top: 1rem;
+
+    }
+    &__checkbox:checked ~ &__btn &__icon::before{
+        transform: rotate(-45deg);
+        top: -1rem;
+    }
+    &__checkbox:checked ~ &__btn &__icon{
+        background-color: transparent;
+    }
+}
+
+// MEDIA QUERY MANAGER
+
+/*
+    0 - 600px -- phone
+    600 - 900px -- tablet potrait
+    900 - 1200px -- tablet landscape
+    1200 - 1800px -- normal style applies
+    1800px + -- larget desktop
+*/
+
+
+/*
+break point choices
+    -phone
+    -tabPort
+    -tabLand
+    -bigDesk
+*/
+@mixin respond($breakPoint){
+    @if $breakPoint == phone{
+        @media (max-width:600px) {
+           @content;
+        }
+    }
+    @if $breakPoint == tabPort{
+        @media (max-width:900px) {
+           @content;
+        }
+    }
+    @if $breakPoint == tabLand{
+        @media (max-width:1200px) {
+            @content;
+        }
+    }
+    @if $breakPoint == bigDesk{
+        @media (min-width:1800px) {
+            @content;
+        }
+    }
+}

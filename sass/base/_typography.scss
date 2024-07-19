@@ -1,0 +1,137 @@
+body {
+  font-family: "Nato", sans-serif;
+  line-height: 1.7;
+  font-size: 1.6rem;
+  font-weight: 400;
+  color: #777;
+}
+
+.text-box {
+  position: absolute;
+  top: 30%; // unkouwn reason
+  left: 50%;
+  // bottom: 30%;
+  text-align: center;
+  transform: translateX(-50%);
+
+  backface-visibility: hidden;
+  @include respond(tabPort) {
+    top: 30%;
+  }
+}
+
+.primery-title {
+  color: $color-tertiary-light;
+  text-transform: uppercase;
+  text-wrap: nowrap;
+  &--main {
+    font-size: 6rem;
+    display: block;
+    letter-spacing: 2rem;
+    animation-name: moveLeftoRight;
+    animation-duration: 1.5s;
+    animation-timing-function: ease-out;
+    /* animation-delay: 1s;
+        animation-iteration-count: 5; */
+
+    @include respond(phone) {
+      letter-spacing: 1rem;
+      font-size: 10rem;
+    }
+  }
+  &--sub {
+    color: $color-gray-2;
+    font-size: 3rem;
+    font-weight: 300;
+    letter-spacing: 0.8rem;
+    animation: moveRightoLeft 1.5s ease-out;
+    transition: all 0.5s;
+
+    /* adjustment */
+    display: inline-block;
+    line-height: 3rem;
+
+    &-wrapper {
+      border-right: 6px solid $color-white;
+      display: inline-block;
+      overflow: hidden;
+
+      margin-right: auto;
+    }
+
+    &-content {
+      display: inline-block;
+      //   width: 55rem;
+    }
+
+    @include respond(phone) {
+      letter-spacing: 0.8rem;
+      font-size: 4rem;
+      font-family: "Roboto", sans-serif;
+      font-weight: 300;
+      font-style: normal;
+      margin-top: -3rem;
+    }
+  }
+}
+
+.heading-secondary-box {
+  @include flex();
+  margin: 6rem 0;
+  @include respond(tabPort) {
+    margin: 5rem 0;
+  }
+}
+
+.heading-secondary {
+  font-size: 5rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  background-image: linear-gradient(
+    var(--a),
+    $color-dark,
+    $color-primery-light
+  );
+  animation: featureBoxAnim 6s linear infinite;
+  // cliping mask
+  background-clip: text;
+  color: transparent;
+  line-height: normal;
+  transition: all 1s;
+  transform-origin: left;
+
+  cursor: pointer;
+
+  @include respond(tabPort) {
+    font-size: 8rem;
+    margin-bottom: 0px;
+  }
+}
+.header-thertiary {
+  font-size: $default-font-size;
+  font-weight: 700;
+  text-transform: uppercase;
+
+  animation: bulb-2 7s linear infinite both;
+
+  @include respond(tabPort) {
+    font-size: 3rem;
+    text-align: center;
+  }
+}
+.paragraph {
+  font-size: $default-font-size;
+  color: #a8a8a8;
+
+  transition: transform 1s ease;
+  transform-origin: left;
+  &:not(:last-child) {
+    margin-bottom: 3rem;
+  }
+  @include respond(tabPort) {
+    font-size: 3rem;
+    text-align: justify;
+    text-align-last: left;
+    hyphens: manual;
+  }
+}
