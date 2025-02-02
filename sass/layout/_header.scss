@@ -135,8 +135,9 @@
   right: 15rem;
   top: 13rem;
   background-size: contain;
+  border-radius: 50% !important;
   animation: main-img-anim 1.5s ease-in-out;
-
+  display: none;
   @include respond(phone) {
     right: 50%;
     transform: translateX(50%);

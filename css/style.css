@@ -489,11 +489,12 @@ section {
 }
 
 .main-img {
-  width: 25rem;
+  width: 20rem;
   position: absolute;
-  right: 17rem;
+  right: 20rem;
   top: 15rem;
   background-size: contain;
+  border-radius: 50% !important;
   animation: main-img-anim 1.5s ease-in-out;
 }
 @media (max-width: 1200px) {
@@ -811,7 +812,7 @@ body {
 }
 
 .section-about {
-  background-color: #11122b;
+  background-color: #070818;
   transition: 1s all;
 }
 .section-about__grid {
@@ -1074,7 +1075,7 @@ body {
   transition: transform 1s ease;
 }
 .card__side--front {
-  background-color: #11122b;
+  background-color: #070818;
 }
 .card__side--back {
   transform: rotateY(180deg);
@@ -1316,7 +1317,7 @@ body {
   height: 100%;
   z-index: -1;
   width: 100%;
-  background-image: linear-gradient(#2e0249, 0.8, #11122b, 0.8);
+  background-image: linear-gradient(#2e0249, 0.8, #070818, 0.8);
   overflow: hidden;
 }
 .bg__video-content {
@@ -1637,7 +1638,7 @@ body {
 
 .footer {
   font-size: 1.2rem;
-  background-color: #11122b;
+  background-color: #070818;
   padding: 8rem 8rem 20rem 8rem;
   display: flex;
   flex-direction: column;
@@ -1683,7 +1684,7 @@ body {
 }
 .footer__link:link, .footer__link:visited {
   color: #f7f7f7;
-  background-color: #11122b;
+  background-color: #070818;
   text-transform: uppercase;
   text-decoration: none;
   display: inline-block;

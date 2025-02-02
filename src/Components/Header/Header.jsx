@@ -49,11 +49,13 @@ function Header({ children }) {
           <InstaSvg />
         </div>
         <TextBox />
-        <img
-          src="./img/Arjun-Cv-mainWebp.webp"
-          className="main-img"
-          alt="Web developer Arjun Cv"
-        />
+        <div className="main-img-container">
+          <img
+            src="./img/myimg.JPG"
+            className="main-img"
+            alt="Web developer Arjun Cv"
+          />
+        </div>
         <ContactNowBtn>Contact Now</ContactNowBtn>
       </div>
     </header>

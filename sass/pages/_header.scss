@@ -70,14 +70,36 @@
 
   transition: all 1s;
 }
+// .main-img-container {
+//   width: 20rem;
+//   height: 20rem;
+//   position: absolute;
+//   right: 17rem;
+//   top: 15rem;
 
+//   border-radius: 50% !important;
+//   background-image: url("./img/myimg.JPG");
+//   background-size: cover;
+//   background-position: center;
+//   animation: main-img-anim 1.5s ease-in-out;
+
+//   @include respond(tabLand) {
+//     right: 50%;
+//     transform: translateX(50%);
+//     top: 10rem;
+//     width: 35rem;
+//     height: 35rem;
+//     animation: main-img-anim-phone 1.5s ease-in-out;
+//   }
+// }
 .main-img {
-  width: 25rem;
-
+  width: 20rem;
+  aspect-ratio: 1/1;
   position: absolute;
-  right: 17rem;
+  right: 20rem;
   top: 15rem;
   background-size: contain;
+  border-radius: 50% !important;
   animation: main-img-anim 1.5s ease-in-out;
 
   @include respond(tabLand) {
